@@ -1,84 +1,177 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import { ShieldCheck, Menu, X } from 'lucide-react';
-import { NAV_LINKS } from '../../constants';
+import { Menu, X, ChevronDown, Shield } from 'lucide-react';
+import { NAV_LINKS, ALL_SERVICES } from '../../constants';
 import { motion, AnimatePresence } from 'framer-motion';
 import Button from '../ui/Button';
 import { cn } from '../../lib/utils';
-// import ThemeToggle from '../ui/ThemeToggle';
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    <header className={cn(
-      "sticky top-0 z-50 transition-all duration-300",
-      isScrolled ? "header-bg backdrop-blur-lg border-b border-brand-cyan/20 light:border-light-border" : "bg-transparent"
-    )}>
+    <header
+      className={cn(
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
+        isScrolled
+          ? 'header-bg border-b border-brand-cyan/10 shadow-[0_4px_32px_rgba(0,0,0,0.4)]'
+          : 'bg-transparent border-b border-transparent',
+      )}
+    >
       <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
-        <Link to="/" className="flex items-center gap-2">
-          <ShieldCheck className="h-8 w-8 text-brand-cyan" />
-          <span className="text-2xl font-display font-bold text-white light:text-light-text">Roblocksec</span>
+        {/* Logo */}
+        <Link to="/" className="flex items-center gap-2.5 group">
+          <div className="relative">
+            <div className="absolute inset-0 bg-brand-cyan/30 rounded-lg blur-md group-hover:bg-brand-cyan/50 transition-all duration-300" />
+            <Shield className="relative h-8 w-8 text-brand-cyan drop-shadow-[0_0_8px_rgba(0,245,255,0.8)]" />
+          </div>
+          <span className="text-xl font-display font-bold tracking-wider text-white">
+            ROBLOC<span className="text-brand-cyan">K</span>SEC
+          </span>
         </Link>
-        <div className="hidden md:flex items-center gap-8">
-          {NAV_LINKS.map((link) => (
-            <NavLink
-              key={link.key}
-              to={link.href}
-              className={({ isActive }) =>
-                cn(
-                  "text-gray-300 light:text-gray-600 hover:text-brand-cyan light:hover:text-brand-blue transition-colors duration-300 relative font-medium",
-                  "after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-brand-cyan light:after:bg-brand-blue after:transition-all after:duration-300",
-                  isActive ? "text-brand-cyan light:text-brand-blue after:w-full" : "hover:after:w-full"
-                )
-              }
-            >
-              {link.label}
-            </NavLink>
-          ))}
+
+        {/* Desktop Nav */}
+        <div className="hidden md:flex items-center gap-1">
+          {NAV_LINKS.map((link) =>
+            link.key === 'services' ? (
+              <div
+                key={link.key}
+                className="relative"
+                onMouseEnter={() => setServicesOpen(true)}
+                onMouseLeave={() => setServicesOpen(false)}
+              >
+                <button
+                  className={cn(
+                    'flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-semibold tracking-wide transition-all duration-200',
+                    'text-gray-300 hover:text-brand-cyan hover:bg-brand-cyan/5',
+                  )}
+                >
+                  Services
+                  <ChevronDown
+                    size={14}
+                    className={cn('transition-transform duration-200', servicesOpen && 'rotate-180')}
+                  />
+                </button>
+                <AnimatePresence>
+                  {servicesOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 8, scale: 0.97 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: 8, scale: 0.97 }}
+                      transition={{ duration: 0.18 }}
+                      className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-72 glass-card rounded-xl py-2 overflow-hidden"
+                    >
+                      <div className="px-3 py-2">
+                        <p className="text-[10px] font-mono tracking-widest text-brand-cyan/60 uppercase mb-1">
+                          Our Services
+                        </p>
+                      </div>
+                      {ALL_SERVICES.map((svc) => (
+                        <Link
+                          key={svc.slug}
+                          to={`/services/${svc.slug}`}
+                          onClick={() => setServicesOpen(false)}
+                          className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-300 hover:text-brand-cyan hover:bg-brand-cyan/5 transition-all duration-150"
+                        >
+                          <svc.icon size={15} className="text-brand-cyan/60 shrink-0" />
+                          {svc.title}
+                        </Link>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            ) : (
+              <NavLink
+                key={link.key}
+                to={link.href}
+                className={({ isActive }) =>
+                  cn(
+                    'px-4 py-2 rounded-lg text-sm font-semibold tracking-wide transition-all duration-200',
+                    isActive
+                      ? 'text-brand-cyan bg-brand-cyan/8'
+                      : 'text-gray-300 hover:text-brand-cyan hover:bg-brand-cyan/5',
+                  )
+                }
+              >
+                {link.label}
+              </NavLink>
+            ),
+          )}
         </div>
-        <div className="hidden md:flex items-center gap-4">
-          {/* <ThemeToggle /> */}
-          <Button href="/contact" variant="primary">Get a Quote</Button>
+
+        {/* CTA + Mobile toggle */}
+        <div className="hidden md:flex items-center gap-3">
+          <Button href="/careers" variant="ghost" className="text-sm">
+            Careers
+          </Button>
+          <Button href="/contact" variant="primary" className="text-sm">
+            Get a Quote
+          </Button>
         </div>
-        <div className="md:hidden flex items-center gap-4">
-          {/* <ThemeToggle /> */}
-          <button onClick={() => setIsOpen(!isOpen)} className="text-white light:text-light-text focus:outline-none">
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
-        </div>
+
+        <button
+          className="md:hidden text-gray-300 hover:text-brand-cyan transition-colors p-1.5"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle menu"
+        >
+          {isOpen ? <X size={26} /> : <Menu size={26} />}
+        </button>
       </nav>
+
+      {/* Mobile menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="md:hidden card-bg absolute w-full border-b border-brand-cyan/20 light:border-light-border"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.25 }}
+            className="md:hidden overflow-hidden header-bg border-b border-brand-cyan/10"
           >
-            <div className="flex flex-col items-center gap-6 py-8">
+            <div className="flex flex-col px-6 py-6 gap-1">
               {NAV_LINKS.map((link) => (
                 <NavLink
                   key={link.key}
                   to={link.href}
                   onClick={() => setIsOpen(false)}
                   className={({ isActive }) =>
-                    cn("text-xl", isActive ? "text-brand-cyan light:text-brand-blue font-semibold" : "text-gray-300 light:text-light-text")
+                    cn(
+                      'px-4 py-3 rounded-lg text-base font-semibold transition-all duration-200',
+                      isActive
+                        ? 'text-brand-cyan bg-brand-cyan/8'
+                        : 'text-gray-300 hover:text-brand-cyan hover:bg-brand-cyan/5',
+                    )
                   }
                 >
                   {link.label}
                 </NavLink>
               ))}
-              <Button href="/contact" variant="primary" onClick={() => setIsOpen(false)}>Get a Quote</Button>
+              <NavLink
+                to="/careers"
+                onClick={() => setIsOpen(false)}
+                className={({ isActive }) =>
+                  cn(
+                    'px-4 py-3 rounded-lg text-base font-semibold transition-all duration-200',
+                    isActive ? 'text-brand-cyan' : 'text-gray-300 hover:text-brand-cyan hover:bg-brand-cyan/5',
+                  )
+                }
+              >
+                Careers
+              </NavLink>
+              <div className="mt-3">
+                <Button href="/contact" variant="primary" className="w-full" onClick={() => setIsOpen(false)}>
+                  Get a Quote
+                </Button>
+              </div>
             </div>
           </motion.div>
         )}
