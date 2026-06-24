@@ -92,9 +92,9 @@ export const DEMO_CASE_STUDIES = [
 
 export const DEMO_TEAM = [
     { name: 'Roshan kappala', role: 'Founder and CEO', image: 'roshan.png', specialization: 'AI in Cybersecurity', category: 'founding' },
-    { name: 'Kishore Poonamalle', role: 'Co-Founder & Chief Compliance Officer', image: 'https://placehold.co/400x400/0d1117/ffffff?text=K.P', specialization: 'Governance, Risk & Compliance (GRC)', category: 'founding' },
-    { name: 'Anudha Poonamalle', role: 'Co-Founder & Chief Operating Officer', image: 'https://placehold.co/400x400/0d1117/ffffff?text=A.P', specialization: 'Cyber Operations & Strategy', category: 'founding' },
-    { name: 'Mano Sundhar', role: 'Co-Founder & Chief Technology Officer', image: 'https://placehold.co/400x400/0d1117/ffffff?text=M.S', specialization: 'Security Research & R&D', category: 'founding' }
+    { name: 'Kishore Poonamalle', role: 'Co-Founder', image: 'https://placehold.co/400x400/0d1117/ffffff?text=K.P', specialization: 'Governance, Risk & Compliance (GRC)', category: 'founding' },
+    { name: 'Anudha Poonamalle', role: 'Co-Founder', image: 'https://placehold.co/400x400/0d1117/ffffff?text=A.P', specialization: 'Cyber Operations & Strategy', category: 'founding' },
+    { name: 'Mano Sundhar', role: 'Co-Founder', image: 'https://placehold.co/400x400/0d1117/ffffff?text=M.S', specialization: 'Security Research & R&D', category: 'founding' }
 ];
 
 export const DEMO_BLOG_POSTS = [
