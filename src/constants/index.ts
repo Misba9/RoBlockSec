@@ -91,10 +91,7 @@ export const DEMO_CASE_STUDIES = [
 ];
 
 export const DEMO_TEAM = [
-    { name: 'Roshan kappala', role: 'Founder and CEO ', image: 'roshan.png', specialization: 'AI in Cybersecurity', category: 'founding' },
-    { name: 'Ahmed Misbahuddin', role: 'Product Development Lead', image: 'ahmed.png', specialization: 'Secure Web & Mobile App Development', category: 'founding' },
-    { name: 'kenny pothuraju', role: 'Blue Team Lead', image: 'https://media.licdn.com/dms/image/v2/D5603AQGZOMLljgcA4A/profile-displayphoto-crop_800_800/B56ZkFr4wOHUAI-/0/1756737015854?e=1762992000&v=beta&t=Y0ay4DskdtTh-UPNfi8a2jfuvZzDLWbae638kvNSkjY', specialization: 'Threat Intelligence & IR', category: 'founding' },
-    { name: 'Godugu Sai Charan', role: 'Red Team Lead', image: '/godugu.png', specialization: 'Compliance & Risk Frameworks', category: 'new' },
+    { name: 'Roshan kappala', role: 'Founder and CEO ', image: 'roshan.png', specialization: 'AI in Cybersecurity', category: 'founding' }
 ];
 
 export const DEMO_BLOG_POSTS = [
