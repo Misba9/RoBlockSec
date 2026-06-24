@@ -46,16 +46,32 @@ const JobListing: React.FC<{ job: typeof DEMO_CAREERS[0] }> = ({ job }) => {
         </div>
     );
 };
-
 const CareersPage: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     position: 'Select Position to Apply For'
   });
+  const [emailTouched, setEmailTouched] = useState(false);
+
+  const validateEmail = (email: string) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(email).toLowerCase());
+  };
+
+  const isEmailValid = validateEmail(formData.email);
+  const showEmailError = emailTouched && formData.email !== '' && !isEmailValid;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!isEmailValid) {
+      alert('Please enter a valid email address.');
+      return;
+    }
+    if (formData.position === 'Select Position to Apply For' || !formData.position) {
+      alert('Please select a position to apply for.');
+      return;
+    }
     const subject = `Job Application: ${formData.position} - ${formData.name}`;
     const body = `Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0APosition: ${formData.position}%0D%0A%0D%0APlease attach resume to this email.`;
     window.location.href = `mailto:hr@roblocksec.com?subject=${subject}&body=${body}`;
@@ -95,22 +111,36 @@ const CareersPage: React.FC = () => {
                 <h2 className="text-3xl font-display font-bold text-white text-center mb-8">Apply Now</h2>
                 <form className="space-y-6" onSubmit={handleSubmit}>
                     <div className="grid md:grid-cols-2 gap-6">
-                        <input 
-                          type="text" 
-                          placeholder="Full Name" 
-                          required
-                          value={formData.name}
-                          onChange={(e) => setFormData({...formData, name: e.target.value})}
-                          className="w-full bg-brand-navy/70 border border-gray-600 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-cyan" 
-                        />
-                        <input 
-                          type="email" 
-                          placeholder="Email Address" 
-                          required
-                          value={formData.email}
-                          onChange={(e) => setFormData({...formData, email: e.target.value})}
-                          className="w-full bg-brand-navy/70 border border-gray-600 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-cyan" 
-                        />
+                        <div>
+                            <input 
+                              type="text" 
+                              placeholder="Full Name" 
+                              required
+                              value={formData.name}
+                              onChange={(e) => setFormData({...formData, name: e.target.value})}
+                              className="w-full bg-brand-navy/70 border border-gray-600 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-cyan" 
+                            />
+                        </div>
+                        <div>
+                            <input 
+                              type="email" 
+                              placeholder="Email Address" 
+                              required
+                              value={formData.email}
+                              onBlur={() => setEmailTouched(true)}
+                              onChange={(e) => setFormData({...formData, email: e.target.value})}
+                              className={`w-full bg-brand-navy/70 border rounded-md px-4 py-3 focus:outline-none focus:ring-2 transition-all ${
+                                showEmailError 
+                                  ? 'border-red-500/50 focus:border-red-500 focus:ring-red-500/20' 
+                                  : 'border-gray-600 focus:border-brand-cyan focus:ring-brand-cyan/20'
+                              }`} 
+                            />
+                            {showEmailError && (
+                              <p className="text-red-400 text-xs mt-2 font-body text-left">
+                                ⚠️ Please enter a valid email address.
+                              </p>
+                            )}
+                        </div>
                     </div>
                     <select 
                       required
