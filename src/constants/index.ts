@@ -95,7 +95,7 @@ export const DEMO_TEAM = [
     { name: 'Kishore Poonamalle', role: 'Co-Founder', image: '', specialization: 'Governance, Risk & Compliance (GRC)', category: 'founding' },
     { name: 'Anudha Poonamalle', role: 'Co-Founder', image: '', specialization: 'Cyber Operations & Strategy', category: 'founding' },
     { name: 'Mano Sundhar', role: 'Co-Founder', image: '', specialization: 'Security Research & R&D', category: 'founding' },
-    { name: 'Tulasi Krishnakumar', role: 'Security Lead', image: '', specialization: 'Offensive Security & Red Teaming', category: 'vanguard' },
+    { name: 'Tulasi Krishnakumar', role: 'Security Lead', image: 'tulasi.png', specialization: 'Offensive Security & Red Teaming', category: 'vanguard' },
     { name: 'Roshini Selvaraj', role: 'Operational Manager', image: '', specialization: 'Cyber Operations & GRC', category: 'vanguard' },
     { name: 'Saketh Shetty', role: 'Cyber Sales', image: '', specialization: 'Client Strategy & Solutions', category: 'vanguard' },
     { name: 'Arul Kumar J', role: 'Cyber Security Product Developer', image: 'arul.png', specialization: 'Secure Software & R&D', category: 'vanguard' }
