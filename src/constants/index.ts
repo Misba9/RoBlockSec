@@ -97,7 +97,7 @@ export const DEMO_TEAM = [
     { name: 'Mano Sundhar', role: 'Co-Founder', image: '', specialization: 'Security Research & R&D', category: 'founding' },
     { name: 'Tulasi Krishnakumar', role: 'Security Lead', image: 'tulasi.png', specialization: 'Offensive Security & Red Teaming', category: 'vanguard' },
     { name: 'Roshini Selvaraj', role: 'Operational Manager', image: '', specialization: 'Cyber Operations & GRC', category: 'vanguard' },
-    { name: 'Saketh Shetty', role: 'Cyber Sales', image: '', specialization: 'Client Strategy & Solutions', category: 'vanguard' },
+    { name: 'Saketh Shetty', role: 'Cyber Sales', image: 'saketh.jpg', specialization: 'Client Strategy & Solutions', category: 'vanguard' },
     { name: 'Arul Kumar J', role: 'Cyber Security Product Developer', image: 'arul.png', specialization: 'Secure Software & R&D', category: 'vanguard' }
 ];
 

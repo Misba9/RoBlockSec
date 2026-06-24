@@ -46,9 +46,9 @@ const TeamPage: React.FC = () => {
                   variants={itemVariants}
                   className="relative group overflow-hidden rounded-[2rem] bg-brand-navy glowing-border text-center w-full sm:w-[320px]"
                 >
-                  <div className="w-full h-80 bg-black/25 flex items-center justify-center overflow-hidden">
+                  <div className="w-full h-80 bg-white flex items-center justify-center overflow-hidden">
                     {member.image ? (
-                      <img src={member.image} alt={member.name} className="w-full h-full object-contain" />
+                      <img src={member.image} alt={member.name} className="w-full h-full object-cover object-top" />
                     ) : (
                       <div className="w-full h-full bg-gradient-to-br from-brand-navy2 to-brand-dark flex flex-col items-center justify-center relative">
                         <div className="w-20 h-20 rounded-full bg-gradient-to-tr from-brand-purple/20 to-brand-cyan/20 border border-brand-cyan/35 flex items-center justify-center shadow-[0_0_20px_rgba(232,80,0,0.15)] relative">
@@ -90,9 +90,9 @@ const TeamPage: React.FC = () => {
                   variants={itemVariants}
                   className="relative group overflow-hidden rounded-[2rem] bg-brand-navy glowing-border text-center w-full sm:w-[280px]"
                 >
-                  <div className="w-full h-72 bg-black/25 flex items-center justify-center overflow-hidden">
+                  <div className="w-full h-72 bg-white flex items-center justify-center overflow-hidden">
                     {member.image ? (
-                      <img src={member.image} alt={member.name} className="w-full h-full object-contain" />
+                      <img src={member.image} alt={member.name} className="w-full h-full object-cover object-top" />
                     ) : (
                       <div className="w-full h-full bg-gradient-to-br from-brand-navy2 to-brand-dark flex flex-col items-center justify-center relative">
                         <div className="w-16 h-16 rounded-full bg-gradient-to-tr from-brand-purple/20 to-brand-cyan/20 border border-brand-cyan/35 flex items-center justify-center shadow-[0_0_20px_rgba(232,80,0,0.15)] relative">
