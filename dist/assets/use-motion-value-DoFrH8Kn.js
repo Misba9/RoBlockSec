@@ -1,1 +1,0 @@
-import{ag as n,r as t,M as u,ai as c}from"./index-CSRsyHO7.js";function i(o){const e=n(()=>c(o)),{isStatic:s}=t.useContext(u);if(s){const[,a]=t.useState(o);t.useEffect(()=>e.on("change",a),[])}return e}export{i as u};

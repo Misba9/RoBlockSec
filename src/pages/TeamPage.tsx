@@ -35,9 +35,11 @@ const TeamPage: React.FC = () => {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="relative group overflow-hidden rounded-lg bg-brand-navy glowing-border text-center"
+                className="relative group overflow-hidden rounded-[2rem] bg-brand-navy glowing-border text-center"
               >
-                <img src={member.image} alt={member.name} className="w-full h-80 object-cover" />
+                <div className="w-full h-80 bg-black/25 flex items-center justify-center overflow-hidden">
+                  <img src={member.image} alt={member.name} className="w-full h-full object-contain" />
+                </div>
                 <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
                   <h3 className="text-xl font-bold font-display text-white">{member.name}</h3>
                   <p className="text-brand-cyan text-sm">{member.role}</p>
@@ -64,9 +66,11 @@ const TeamPage: React.FC = () => {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="relative group overflow-hidden rounded-lg bg-brand-navy glowing-border text-center"
+                className="relative group overflow-hidden rounded-[2rem] bg-brand-navy glowing-border text-center"
               >
-                <img src={member.image} alt={member.name} className="w-full h-64 object-cover" />
+                <div className="w-full h-72 bg-black/25 flex items-center justify-center overflow-hidden">
+                  <img src={member.image} alt={member.name} className="w-full h-full object-contain" />
+                </div>
                 <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
                   <h3 className="text-xl font-bold font-display text-white">{member.name}</h3>
                   <p className="text-brand-cyan text-sm">{member.role}</p>
