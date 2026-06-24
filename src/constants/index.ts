@@ -92,9 +92,13 @@ export const DEMO_CASE_STUDIES = [
 
 export const DEMO_TEAM = [
     { name: 'Roshan kappala', role: 'Founder and CEO', image: 'roshan.png', specialization: 'AI in Cybersecurity', category: 'founding' },
-    { name: 'Kishore Poonamalle', role: 'Co-Founder', image: 'https://placehold.co/400x400/0d1117/ffffff?text=K.P', specialization: 'Governance, Risk & Compliance (GRC)', category: 'founding' },
-    { name: 'Anudha Poonamalle', role: 'Co-Founder', image: 'https://placehold.co/400x400/0d1117/ffffff?text=A.P', specialization: 'Cyber Operations & Strategy', category: 'founding' },
-    { name: 'Mano Sundhar', role: 'Co-Founder', image: 'https://placehold.co/400x400/0d1117/ffffff?text=M.S', specialization: 'Security Research & R&D', category: 'founding' }
+    { name: 'Kishore Poonamalle', role: 'Co-Founder', image: '', specialization: 'Governance, Risk & Compliance (GRC)', category: 'founding' },
+    { name: 'Anudha Poonamalle', role: 'Co-Founder', image: '', specialization: 'Cyber Operations & Strategy', category: 'founding' },
+    { name: 'Mano Sundhar', role: 'Co-Founder', image: '', specialization: 'Security Research & R&D', category: 'founding' },
+    { name: 'Tulasi Krishnakumar', role: 'Security Lead', image: '', specialization: 'Offensive Security & Red Teaming', category: 'vanguard' },
+    { name: 'Roshini Selvaraj', role: 'Operational Manager', image: '', specialization: 'Cyber Operations & GRC', category: 'vanguard' },
+    { name: 'Saketh Shetty', role: 'Cyber Sales', image: '', specialization: 'Client Strategy & Solutions', category: 'vanguard' },
+    { name: 'Arul Kumar J', role: 'Cyber Security Product Developer', image: 'arul.png', specialization: 'Secure Software & R&D', category: 'vanguard' }
 ];
 
 export const DEMO_BLOG_POSTS = [

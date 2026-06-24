@@ -4,6 +4,14 @@ import PageHero from '../components/ui/PageHero';
 import { DEMO_TEAM } from '../constants';
 import Button from '../components/ui/Button';
 
+const getInitials = (name: string) => {
+  return name
+    .split(' ')
+    .map(n => n[0])
+    .join('')
+    .toUpperCase();
+};
+
 const TeamPage: React.FC = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -24,7 +32,7 @@ const TeamPage: React.FC = () => {
       <div className="py-20 container mx-auto px-6">
         {DEMO_TEAM.filter(m => m.category === 'founding').length > 0 && (
           <div className="mb-20">
-            <h2 className="text-3xl font-display font-bold text-white mb-8 border-l-4 border-brand-cyan pl-6">Founding Team</h2>
+            <h2 className="text-3xl font-display font-bold text-white mb-8 border-l-4 border-brand-cyan pl-6">Founding Directorate</h2>
             <motion.div 
               className="flex flex-wrap justify-center gap-8"
               variants={containerVariants}
@@ -39,7 +47,18 @@ const TeamPage: React.FC = () => {
                   className="relative group overflow-hidden rounded-[2rem] bg-brand-navy glowing-border text-center w-full sm:w-[320px]"
                 >
                   <div className="w-full h-80 bg-black/25 flex items-center justify-center overflow-hidden">
-                    <img src={member.image} alt={member.name} className="w-full h-full object-contain" />
+                    {member.image ? (
+                      <img src={member.image} alt={member.name} className="w-full h-full object-contain" />
+                    ) : (
+                      <div className="w-full h-full bg-gradient-to-br from-brand-navy2 to-brand-dark flex flex-col items-center justify-center relative">
+                        <div className="w-20 h-20 rounded-full bg-gradient-to-tr from-brand-purple/20 to-brand-cyan/20 border border-brand-cyan/35 flex items-center justify-center shadow-[0_0_20px_rgba(232,80,0,0.15)] relative">
+                          <span className="text-2xl font-display font-black text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-purple">
+                            {getInitials(member.name)}
+                          </span>
+                          <span className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-brand-cyan animate-pulse" />
+                        </div>
+                      </div>
+                    )}
                   </div>
                   <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
                     <h3 className="text-xl font-bold font-display text-white">{member.name}</h3>
@@ -55,9 +74,9 @@ const TeamPage: React.FC = () => {
           </div>
         )}
 
-        {DEMO_TEAM.filter(m => m.category === 'new').length > 0 && (
+        {DEMO_TEAM.filter(m => m.category === 'vanguard').length > 0 && (
           <div>
-            <h2 className="text-3xl font-display font-bold text-white mb-8 border-l-4 border-brand-purple pl-6">Core Team</h2>
+            <h2 className="text-3xl font-display font-bold text-white mb-8 border-l-4 border-brand-purple pl-6">Nexalith Vanguard</h2>
             <motion.div 
               className="flex flex-wrap justify-center gap-8"
               variants={containerVariants}
@@ -65,14 +84,25 @@ const TeamPage: React.FC = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
             >
-              {DEMO_TEAM.filter(m => m.category === 'new').map((member, index) => (
+              {DEMO_TEAM.filter(m => m.category === 'vanguard').map((member, index) => (
                 <motion.div
                   key={index}
                   variants={itemVariants}
                   className="relative group overflow-hidden rounded-[2rem] bg-brand-navy glowing-border text-center w-full sm:w-[280px]"
                 >
                   <div className="w-full h-72 bg-black/25 flex items-center justify-center overflow-hidden">
-                    <img src={member.image} alt={member.name} className="w-full h-full object-contain" />
+                    {member.image ? (
+                      <img src={member.image} alt={member.name} className="w-full h-full object-contain" />
+                    ) : (
+                      <div className="w-full h-full bg-gradient-to-br from-brand-navy2 to-brand-dark flex flex-col items-center justify-center relative">
+                        <div className="w-16 h-16 rounded-full bg-gradient-to-tr from-brand-purple/20 to-brand-cyan/20 border border-brand-cyan/35 flex items-center justify-center shadow-[0_0_20px_rgba(232,80,0,0.15)] relative">
+                          <span className="text-xl font-display font-black text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-purple">
+                            {getInitials(member.name)}
+                          </span>
+                          <span className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-brand-purple animate-pulse" />
+                        </div>
+                      </div>
+                    )}
                   </div>
                   <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
                     <h3 className="text-xl font-bold font-display text-white">{member.name}</h3>
