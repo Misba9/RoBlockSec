@@ -19,6 +19,7 @@ const ProductsPage = lazy(() => import('./pages/ProductsPage'));
 const RedTeamingPage = lazy(() => import('./pages/services/RedTeamingPage'));
 const BlueTeamingPage = lazy(() => import('./pages/services/BlueTeamingPage'));
 const GRCPage = lazy(() => import('./pages/services/GRCPage'));
+const IRDFPage = lazy(() => import('./pages/services/IRDFPage'));
 const ProductDevelopmentPage = lazy(() => import('./pages/services/ProductDevelopmentPage'));
 const TrainingPage = lazy(() => import('./pages/services/TrainingPage'));
 
@@ -35,6 +36,12 @@ const SecurityMonitoringPage = lazy(() => import('./pages/services/blue-teaming/
 const ThreatIntelligencePage = lazy(() => import('./pages/services/blue-teaming/ThreatIntelligencePage'));
 const EDRManagementPage = lazy(() => import('./pages/services/blue-teaming/EDRManagementPage'));
 const IncidentResponseRetainerPage = lazy(() => import('./pages/services/blue-teaming/IncidentResponseRetainerPage'));
+
+// IRDF Sub-Pages
+const DigitalForensicsPage = lazy(() => import('./pages/services/irdf/DigitalForensicsPage'));
+const IncidentResponsePage = lazy(() => import('./pages/services/irdf/IncidentResponsePage'));
+const CyberCrimeInvestigationPage = lazy(() => import('./pages/services/irdf/CyberCrimeInvestigationPage'));
+const MalwareAnalysisPage = lazy(() => import('./pages/services/irdf/MalwareAnalysisPage'));
 
 // GRC Sub-Pages
 const GovernancePage = lazy(() => import('./pages/services/grc-services/GovernancePage'));
@@ -63,6 +70,7 @@ const App: React.FC = () => {
           <Route path="/services/red-teaming" element={<RedTeamingPage />} />
           <Route path="/services/blue-teaming" element={<BlueTeamingPage />} />
           <Route path="/services/grc-services" element={<GRCPage />} />
+          <Route path="/services/irdf-cyber-crime" element={<IRDFPage />} />
           <Route path="/services/product-development" element={<ProductDevelopmentPage />} />
           <Route path="/services/training" element={<TrainingPage />} />
 
@@ -79,6 +87,12 @@ const App: React.FC = () => {
           <Route path="/services/blue-teaming/threat-intelligence" element={<ThreatIntelligencePage />} />
           <Route path="/services/blue-teaming/edr-xdr-management" element={<EDRManagementPage />} />
           <Route path="/services/blue-teaming/incident-response-retainer" element={<IncidentResponseRetainerPage />} />
+
+          {/* IRDF Sub-Routes */}
+          <Route path="/services/irdf-cyber-crime/digital-forensics" element={<DigitalForensicsPage />} />
+          <Route path="/services/irdf-cyber-crime/incident-response" element={<IncidentResponsePage />} />
+          <Route path="/services/irdf-cyber-crime/cyber-crime-investigation" element={<CyberCrimeInvestigationPage />} />
+          <Route path="/services/irdf-cyber-crime/malware-analysis" element={<MalwareAnalysisPage />} />
         
           {/* GRC Sub-Routes */}
           <Route path="/services/grc-services/governance" element={<GovernancePage />} />

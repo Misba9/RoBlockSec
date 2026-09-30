@@ -271,8 +271,9 @@ const ContactForm: React.FC = () => {
                     <option value="" disabled>Select a cybersecurity service</option>
                     <option value="Red Teaming / VAPT">Red Teaming / VAPT</option>
                     <option value="Blue Teaming / SOC">Blue Teaming / SOC</option>
+                    <option value="IRDF & Cyber Crime Investigation">IRDF & Cyber Crime Investigation</option>
                     <option value="GRC Services">Governance, Risk, and Compliance (GRC)</option>
-                    <option value="Product Demo">Product Demo (Data Rakshak / BreachSimu)</option>
+                    <option value="Product Demo">Product Demo (Data Rakshak / BreachSimu / BountyLab / Darkweb Monitoring)</option>
                     <option value="Other">Other / Custom Inquiry</option>
                   </select>
                 </div>

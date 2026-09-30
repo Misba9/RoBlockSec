@@ -89,9 +89,19 @@ const Footer: React.FC = () => {
                 <Building2 size={18} className="text-brand-cyan flex-shrink-0" />
                 <span>Roblocksec LLP</span>
               </li>
-              <li className="flex items-center gap-3 text-gray-400">
-                <MapPin size={18} className="text-brand-cyan flex-shrink-0" />
-                <span>Uppal, Hyderabad, Telangana</span>
+              <li className="flex items-start gap-3 text-gray-400">
+                <MapPin size={18} className="text-brand-cyan flex-shrink-0 mt-0.5" />
+                <div>
+                  <span className="text-white font-medium block">Hyderabad Office:</span>
+                  <span className="text-xs text-gray-400">Ameerpet, Hyderabad, Telangana 500073</span>
+                </div>
+              </li>
+              <li className="flex items-start gap-3 text-gray-400">
+                <MapPin size={18} className="text-brand-purple flex-shrink-0 mt-0.5" />
+                <div>
+                  <span className="text-white font-medium block">Puducherry Office:</span>
+                  <span className="text-xs text-gray-400">Lawspet, Puducherry 605008</span>
+                </div>
               </li>
               <li className="flex items-center gap-3 text-gray-400 pt-2 border-t border-white/5">
                 <User size={18} className="text-brand-cyan flex-shrink-0" />

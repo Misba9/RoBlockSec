@@ -1,4 +1,4 @@
-import { ShieldCheck, Smartphone, Globe, BrainCircuit, Bot, FileCheck, Search, Server, Users, GraduationCap, Target, Shield, HeartHandshake, Lightbulb, Code, ShieldQuestion, Briefcase, Building, Eye, LifeBuoy } from 'lucide-react';
+import { ShieldCheck, Smartphone, Globe, BrainCircuit, Bot, FileCheck, Search, Server, Users, GraduationCap, Target, Shield, HeartHandshake, Lightbulb, Code, ShieldQuestion, Briefcase, Building, Eye, LifeBuoy, Fingerprint, FileSearch, ShieldAlert } from 'lucide-react';
 
 export const NAV_LINKS = [
   { href: '/', key: 'home', label: 'Home' },
@@ -46,6 +46,18 @@ export const ALL_SERVICES = [
       { slug: 'governance', name: 'Governance', icon: Building },
       { slug: 'risk-management', name: 'Risk Management', icon: ShieldQuestion },
       { slug: 'compliance', name: 'Compliance', icon: Briefcase },
+    ]
+  },
+  {
+    slug: 'irdf-cyber-crime',
+    title: 'IRDF & Cyber Crime Investigation',
+    description: 'Forensic-grade artifact recovery, rapid incident containment, chain-of-custody evidence preservation, and cyber crime investigation.',
+    icon: Fingerprint,
+    subServices: [
+      { slug: 'digital-forensics', name: 'Digital Forensics & Artifact Recovery', icon: Fingerprint },
+      { slug: 'incident-response', name: 'Rapid Incident Containment & Triage', icon: ShieldAlert },
+      { slug: 'cyber-crime-investigation', name: 'Cyber Crime Investigation & Attribution', icon: FileSearch },
+      { slug: 'malware-analysis', name: 'Malware Forensics & Reverse Engineering', icon: Bot },
     ]
   },
   {
@@ -98,7 +110,8 @@ export const DEMO_TEAM = [
     { name: 'Tulasi Krishnakumar', role: 'Security Lead', image: 'tulasi.png', specialization: 'Offensive Security & Red Teaming', category: 'vanguard' },
     { name: 'Roshini Selvaraj', role: 'Operational Manager', image: '', specialization: 'Cyber Operations & GRC', category: 'vanguard' },
     { name: 'Saketh Shetty', role: 'Cyber Sales', image: 'saketh.jpg', specialization: 'Client Strategy & Solutions', category: 'vanguard' },
-    { name: 'Arul Kumar J', role: 'Cyber Security Product Developer', image: 'arul.png', specialization: 'Secure Software & R&D', category: 'vanguard' }
+    { name: 'Arul Kumar J', role: 'Cyber Security Product Developer', image: 'arul.png', specialization: 'Secure Software & R&D', category: 'vanguard' },
+    { name: 'Jagan Bhasker', role: 'Cyber Security Intern', image: 'jagan.png', specialization: 'Vulnerability Assessment & Penetration Testing', category: 'vanguard' }
 ];
 
 export const DEMO_BLOG_POSTS = [
@@ -218,6 +231,11 @@ export const FAQ_DATA = {
   'grc-services': [
     { q: 'Which compliance standards do you cover?', a: 'We have expertise in a wide range of standards, including ISO 27001, PCI DSS, HIPAA, GDPR, SOC 2, and more. We tailor our approach to your specific industry and regulatory needs.' },
     { q: 'How does GRC benefit my business?', a: 'Effective GRC aligns your security program with business objectives, reduces risk, ensures regulatory compliance, and builds trust with customers and stakeholders.' },
+  ],
+  'irdf-cyber-crime': [
+    { q: 'What is the standard procedure during an active cyber breach?', a: 'Our forensic team immediately isolates affected systems, captures volatile memory and volatile network artifacts without compromising evidence integrity, preserves forensic disk images, and neutralizes threat actor persistence.' },
+    { q: 'Can your digital forensic reports be used in legal proceedings and courtrooms?', a: 'Yes. All our digital forensic investigations strictly adhere to ISO/IEC 27037 standards, maintaining a tamper-proof chain of custody suitable for law enforcement submission, cyber insurance claims, and legal litigation.' },
+    { q: 'How quickly can your incident response team deploy?', a: 'Our emergency incident response unit can begin remote containment and digital triage within 60 minutes of notification.' },
   ],
   'product-development': [
     { q: 'Can you build a tool for our specific needs?', a: 'Absolutely. We specialize in developing custom cybersecurity tools and platforms tailored to unique organizational challenges and workflows.' },
