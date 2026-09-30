@@ -1,1 +1,0 @@
-import{ae as n,r as t,M as u,af as c}from"./index-Czdyu-58.js";function f(e){const o=n(()=>c(e)),{isStatic:s}=t.useContext(u);if(s){const[,a]=t.useState(e);t.useEffect(()=>o.on("change",a),[])}return o}export{f as u};

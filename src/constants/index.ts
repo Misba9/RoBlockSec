@@ -111,7 +111,7 @@ export const DEMO_TEAM = [
     { name: 'Roshini Selvaraj', role: 'Operational Manager', image: '', specialization: 'Cyber Operations & GRC', category: 'vanguard' },
     { name: 'Saketh Shetty', role: 'Cyber Sales', image: 'saketh.jpg', specialization: 'Client Strategy & Solutions', category: 'vanguard' },
     { name: 'Arul Kumar J', role: 'Cyber Security Product Developer', image: 'arul.png', specialization: 'Secure Software & R&D', category: 'vanguard' },
-    { name: 'Jagan Bhasker', role: 'Cyber Security Intern', image: 'jagan.png', specialization: 'Vulnerability Assessment & Penetration Testing', category: 'vanguard' }
+    { name: 'Jagan Bhasker', role: 'Cyber Security Intern', image: 'jagan.png', specialization: 'Vulnerability Assessment & Penetration Testing', category: 'intern' }
 ];
 
 export const DEMO_BLOG_POSTS = [
