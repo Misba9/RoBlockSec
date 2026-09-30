@@ -123,12 +123,12 @@ const Footer: React.FC = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/privacy" className="text-gray-400 hover:text-brand-cyan transition-colors">
+                  <Link to="/terms" className="text-gray-400 hover:text-brand-cyan transition-colors">
                     Terms & Conditions
                   </Link>
                 </li>
                 <li>
-                  <Link to="/privacy" className="text-gray-400 hover:text-brand-cyan transition-colors">
+                  <Link to="/refund-policy" className="text-gray-400 hover:text-brand-cyan transition-colors">
                     Refund Policy
                   </Link>
                 </li>

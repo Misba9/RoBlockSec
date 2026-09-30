@@ -4,6 +4,7 @@ import Footer from './Footer';
 import ParticlesBackground from '../shared/ParticlesBackground';
 import Breadcrumbs from '../ui/Breadcrumbs';
 import GlobalContact from '../shared/GlobalContact';
+import CookieBanner from '../ui/CookieBanner';
 import { useTheme } from '../../context/ThemeProvider';
 
 const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -16,6 +17,7 @@ const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       <main className="flex-grow z-10">{children}</main>
       <GlobalContact />
       <Footer />
+      <CookieBanner />
     </div>
   );
 };

@@ -13,6 +13,8 @@ const TeamPage = lazy(() => import('./pages/TeamPage'));
 const CareersPage = lazy(() => import('./pages/CareersPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
 const PrivacyPage = lazy(() => import('./pages/PrivacyPage'));
+const TermsPage = lazy(() => import('./pages/TermsPage'));
+const RefundPolicyPage = lazy(() => import('./pages/RefundPolicyPage'));
 const ProductsPage = lazy(() => import('./pages/ProductsPage'));
 
 // Main Service Pages
@@ -63,6 +65,8 @@ const App: React.FC = () => {
           <Route path="/careers" element={<CareersPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
+          <Route path="/terms" element={<TermsPage />} />
+          <Route path="/refund-policy" element={<RefundPolicyPage />} />
           <Route path="/case-studies" element={<CaseStudiesPage />} />
           <Route path="/products" element={<ProductsPage />} />
 
