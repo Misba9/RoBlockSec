@@ -51,7 +51,7 @@ const ProductDevelopmentPage: React.FC = () => {
                 </p>
             </motion.div>
             <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
-                <img src="https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://placehold.co/600x400/0d1117/8957e5?text=R%26D+Lab" alt="Roblocksec Research Lab" className="rounded-lg shadow-2xl shadow-brand-purple/20" />
+                <img src="/rd-lab.jpg" alt="Roblocksec Research Lab" className="rounded-2xl shadow-2xl shadow-brand-purple/20 border border-white/10 object-cover w-full h-[380px]" />
             </motion.div>
         </div>
 

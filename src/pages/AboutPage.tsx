@@ -32,7 +32,7 @@ const AboutPage: React.FC = () => {
               </p>
             </motion.div>
             <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
-              <img src="https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://placehold.co/600x400/0d1117/1f6feb?text=Our+Lab" alt="Roblocksec Cyber Lab" className="rounded-lg shadow-2xl shadow-brand-blue/20" />
+              <img src="/cyber-lab.jpg" alt="Roblocksec Cyber Lab" className="rounded-2xl shadow-2xl shadow-brand-cyan/20 border border-white/10 object-cover w-full h-[380px]" />
             </motion.div>
           </div>
         </div>
