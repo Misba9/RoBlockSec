@@ -96,10 +96,10 @@ export const TIMELINE_MILESTONES = [
 ];
 
 export const DEMO_CASE_STUDIES = [
-    { title: 'Reduced Attack Surface by 90% for Banking Client', category: 'Fintech', image: 'https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://placehold.co/600x400/0d1117/00ffff?text=Case+Study' },
-    { title: 'Secured 10M+ Mobile App Users for E-commerce Firm', category: 'E-commerce', image: 'https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://placehold.co/600x400/0d1117/8957e5?text=Case+Study' },
-    { title: 'Prevented Major Ransomware Attack via 24/7 SOC', category: 'Healthcare', image: 'https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://placehold.co/600x400/0d1117/1f6feb?text=Case+Study' },
-    { title: 'Achieved Full GDPR Compliance in Record Time', category: 'SaaS', image: 'https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://placehold.co/600x400/0d1117/238636?text=Case+Study' },
+    { title: 'Reduced Attack Surface by 90% for Banking Client', category: 'Fintech', image: '/cyber-lab.jpg' },
+    { title: 'Secured 10M+ Mobile App Users for E-commerce Firm', category: 'E-commerce', image: '/rd-lab.jpg' },
+    { title: 'Prevented Major Ransomware Attack via 24/7 SOC', category: 'Healthcare', image: '/blog-data-rakshak.png' },
+    { title: 'Achieved Full GDPR Compliance in Record Time', category: 'SaaS', image: '/blog-ctf.png' },
 ];
 
 export const DEMO_TEAM = [
@@ -246,11 +246,11 @@ export const FAQ_DATA = {
 };
 
 export const COMPLIANCE_LOGOS = [
-    { name: 'ISO 27001', image: 'https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://placehold.co/150x60/ffffff/000000?text=ISO+27001' },
-    { name: 'GDPR', image: 'https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://placehold.co/150x60/ffffff/000000?text=GDPR' },
-    { name: 'HIPAA', image: 'https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://placehold.co/150x60/ffffff/000000?text=HIPAA' },
-    { name: 'PCI DSS', image: 'https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://placehold.co/150x60/ffffff/000000?text=PCI+DSS' },
-    { name: 'DPDPA 2023', image: 'https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://placehold.co/150x60/ffffff/000000?text=DPDPA+2023' },
-    { name: 'DPDPA 2025', image: 'https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://placehold.co/150x60/ffffff/000000?text=DPDPA+2025' },
-    { name: 'SOC 2', image: 'https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://placehold.co/150x60/ffffff/000000?text=SOC+2' },
+    { name: 'ISO 27001', image: '/shield-check.svg' },
+    { name: 'GDPR', image: '/shield-check.svg' },
+    { name: 'HIPAA', image: '/shield-check.svg' },
+    { name: 'PCI DSS', image: '/shield-check.svg' },
+    { name: 'DPDPA 2023', image: '/shield-check.svg' },
+    { name: 'DPDPA 2025', image: '/shield-check.svg' },
+    { name: 'SOC 2', image: '/shield-check.svg' },
 ];

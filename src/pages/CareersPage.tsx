@@ -98,7 +98,7 @@ const CareersPage: React.FC = () => {
                     </ul>
                 </motion.div>
                 <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
-                    <img src="https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://placehold.co/600x400/0d1117/8957e5?text=Our+Team" alt="Roblocksec Team" className="rounded-xl shadow-xl shadow-brand-purple/20 h-[180px] sm:h-auto w-full object-cover" />
+                    <img src="/cyber-lab.jpg" alt="Roblocksec Team" className="rounded-xl shadow-xl shadow-brand-purple/20 h-[180px] sm:h-auto w-full object-cover" />
                 </motion.div>
             </div>
 
