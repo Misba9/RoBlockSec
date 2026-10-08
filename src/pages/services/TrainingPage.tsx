@@ -72,7 +72,7 @@ const TrainingPage: React.FC = () => {
             </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-4 sm:gap-8 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-8 relative z-10">
             {courses.map((course, index) => (
                 <motion.div
                     key={index}
@@ -80,32 +80,32 @@ const TrainingPage: React.FC = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="glass-card p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl glowing-border relative overflow-hidden group"
+                    className="glass-card p-3.5 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl glowing-border relative overflow-hidden group"
                 >
                     <div className="absolute top-0 right-0 w-32 h-32 bg-brand-cyan/10 rounded-full blur-3xl group-hover:bg-brand-purple/20 transition-all"></div>
-                    <div className="flex items-start gap-3.5 sm:gap-6 relative z-10 flex-col sm:flex-row">
-                        <div className="p-3 sm:p-4 rounded-xl bg-brand-cyan/10 border border-brand-cyan/20 text-brand-cyan shrink-0">
-                          <course.icon className="w-6 h-6 sm:w-8 sm:h-8" />
+                    <div className="flex items-start gap-2.5 sm:gap-6 relative z-10 flex-col sm:flex-row">
+                        <div className="p-2 sm:p-4 rounded-xl bg-brand-cyan/10 border border-brand-cyan/20 text-brand-cyan shrink-0">
+                          <course.icon className="w-4 h-4 sm:w-8 sm:h-8" />
                         </div>
                         <div className="flex-1">
-                            <h3 className="text-base sm:text-2xl font-bold font-display text-white mb-2 sm:mb-3">{course.title}</h3>
-                            <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
-                              <span className="cyber-tag text-[10px] sm:text-xs">{course.duration}</span>
-                              <span className="cyber-tag-purple text-[10px] sm:text-xs">{course.mode}</span>
+                            <h3 className="text-xs sm:text-2xl font-bold font-display text-white mb-1.5 sm:mb-3">{course.title}</h3>
+                            <div className="flex flex-wrap gap-1 sm:gap-2 mb-2 sm:mb-4">
+                              <span className="cyber-tag text-[8px] sm:text-xs px-1.5 py-0.5">{course.duration}</span>
+                              <span className="cyber-tag-purple text-[8px] sm:text-xs px-1.5 py-0.5">{course.mode}</span>
                             </div>
-                            <p className="text-gray-400 mb-3 sm:mb-5 leading-relaxed text-xs sm:text-sm">{course.description}</p>
+                            <p className="text-gray-400 mb-2.5 sm:mb-5 leading-snug sm:leading-relaxed text-[10px] sm:text-sm">{course.description}</p>
                             
-                            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5 mb-4 sm:mb-6">
+                            <ul className="grid grid-cols-2 gap-1.5 sm:gap-2.5 mb-3 sm:mb-6">
                               {course.highlights.map((item, i) => (
-                                <li key={i} className="flex items-center gap-1.5 text-xs sm:text-sm text-gray-300">
-                                  <CheckSquare size={13} className="text-brand-cyan shrink-0" /> {item}
+                                <li key={i} className="flex items-center gap-1 text-[9px] sm:text-sm text-gray-300">
+                                  <CheckSquare size={11} className="text-brand-cyan shrink-0" /> {item}
                                 </li>
                               ))}
                             </ul>
 
-                            <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-3">
-                              <Button href={course.pdf} variant="primary" className="flex-1 text-center justify-center text-xs sm:text-sm py-2 sm:py-2.5" external={true}>View Curriculum</Button>
-                              <Button href="/contact" variant="outline" className="flex-1 text-center justify-center text-xs sm:text-sm py-2 sm:py-2.5">Enroll Now</Button>
+                            <div className="flex flex-row gap-2 sm:gap-3">
+                              <Button href={course.pdf} variant="primary" className="flex-1 text-center justify-center text-[9px] sm:text-sm py-1.5 sm:py-2.5 px-2" external={true}>View Curriculum</Button>
+                              <Button href="/contact" variant="outline" className="flex-1 text-center justify-center text-[9px] sm:text-sm py-1.5 sm:py-2.5 px-2">Enroll Now</Button>
                             </div>
                         </div>
                     </div>
@@ -114,23 +114,25 @@ const TrainingPage: React.FC = () => {
         </div>
 
         {/* Detailed Curriculum Section */}
-        <div className="mt-12 sm:mt-24 relative z-10">
-          <div className="text-center mb-6 sm:mb-12">
-            <h2 className="text-xl sm:text-3xl font-display font-bold text-white mb-2 sm:mb-4">Detailed Training Curriculum</h2>
-            <p className="text-gray-400 text-xs sm:text-sm">Deep dive into the technical modules and learning outcomes of our programmes.</p>
+        <div className="mt-8 sm:mt-24 relative z-10">
+          <div className="text-center mb-4 sm:mb-12">
+            <h2 className="text-base sm:text-3xl font-display font-bold text-white mb-1 sm:mb-4">Detailed Training Curriculum</h2>
+            <p className="text-gray-400 text-[10px] sm:text-sm">Deep dive into the technical modules and learning outcomes of our programmes.</p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-6">
             {courses.map((course, index) => (
               <motion.div
                 key={index}
                 whileHover={{ y: -5 }}
-                className="glass-card p-4 sm:p-6 rounded-xl border border-white/5 flex flex-col items-center text-center group hover:border-brand-cyan/50 transition-all"
+                className="glass-card p-2.5 sm:p-6 rounded-xl border border-white/5 flex flex-col items-center text-center group hover:border-brand-cyan/50 transition-all"
               >
-                <div className="w-10 h-10 rounded-lg bg-brand-cyan/10 flex items-center justify-center mb-3 text-brand-cyan">
-                  <FileText size={20} />
+                <div className="w-7 h-7 sm:w-10 sm:h-10 rounded-lg bg-brand-cyan/10 flex items-center justify-center mb-2 sm:mb-3 text-brand-cyan">
+                  <FileText size={14} className="sm:hidden" />
+                  <FileText size={20} className="hidden sm:block" />
                 </div>
-                <h3 className="text-white font-bold mb-3 text-xs sm:text-sm">{course.title} Syllabus</h3>
-                <Button href={course.pdf} variant="outline" className="text-xs py-1.5 px-3" external={true}>Download PDF</Button>
+                <h3 className="text-white font-bold mb-2 text-[10px] sm:text-sm line-clamp-2">{course.title} Syllabus</h3>
+                <div className="flex-grow"></div>
+                <Button href={course.pdf} variant="outline" className="text-[8px] sm:text-xs py-1 px-2 w-full" external={true}>Download PDF</Button>
               </motion.div>
             ))}
           </div>

@@ -66,9 +66,9 @@ const ProductsPage: React.FC = () => {
         subtitle="Innovation-driven security tools engineered for the modern threat landscape." 
       />
 
-      <section className="py-8 sm:py-16 px-3 sm:px-6">
+      <section className="py-6 sm:py-16 px-2.5 sm:px-6">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid md:grid-cols-2 gap-4 sm:gap-8">
+          <div className="grid grid-cols-2 gap-2.5 sm:gap-8">
             {products.map((product, index) => (
               <motion.div
                 key={product.title}
@@ -76,41 +76,41 @@ const ProductsPage: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="glass-card p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl md:rounded-[2rem] border border-white/5 hover:border-brand-cyan/30 transition-all group flex flex-col justify-between"
+                className="glass-card p-3 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl md:rounded-[2rem] border border-white/5 hover:border-brand-cyan/30 transition-all group flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex items-center justify-between gap-2 mb-4 sm:mb-6">
-                    <div className={`w-10 h-10 sm:w-14 sm:h-14 rounded-xl ${product.bgClass} flex items-center justify-center group-hover:scale-105 transition-transform`}>
-                      <product.icon className={`${product.colorClass} w-5 h-5 sm:w-7 sm:h-7`} />
+                  <div className="flex items-center justify-between gap-1.5 mb-2 sm:mb-6 flex-wrap">
+                    <div className={`w-7 h-7 sm:w-14 sm:h-14 rounded-lg sm:rounded-xl ${product.bgClass} flex items-center justify-center group-hover:scale-105 transition-transform`}>
+                      <product.icon className={`${product.colorClass} w-3.5 h-3.5 sm:w-7 sm:h-7`} />
                     </div>
                     {product.badge && (
-                      <span className="text-[10px] sm:text-xs font-mono px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-right">
+                      <span className="text-[8px] sm:text-xs font-mono px-1.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-right">
                         {product.badge}
                       </span>
                     )}
                   </div>
-                  <h3 className="text-lg sm:text-2xl lg:text-3xl font-display font-bold text-white mb-2 sm:mb-3">{product.title}</h3>
-                  <p className="text-gray-300 text-xs sm:text-sm lg:text-base mb-4 sm:mb-6 leading-relaxed">
+                  <h3 className="text-xs sm:text-2xl lg:text-3xl font-display font-bold text-white mb-1 sm:mb-3">{product.title}</h3>
+                  <p className="text-gray-300 text-[10px] sm:text-sm lg:text-base mb-2.5 sm:mb-6 leading-snug sm:leading-relaxed">
                     {product.description}
                   </p>
                   
-                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5 mb-5 sm:mb-6">
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1 sm:gap-2.5 mb-3 sm:mb-6">
                     {product.features.map(feature => (
-                      <li key={feature} className="flex items-center gap-2 text-gray-300 text-xs sm:text-sm">
-                        <div className={`w-1.5 h-1.5 rounded-full shrink-0 ${product.dotClass}`}></div>
-                        <span>{feature}</span>
+                      <li key={feature} className="flex items-center gap-1.5 text-gray-300 text-[9px] sm:text-sm">
+                        <div className={`w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full shrink-0 ${product.dotClass}`}></div>
+                        <span className="truncate sm:whitespace-normal">{feature}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-4 pt-3 sm:pt-4 border-t border-white/5">
+                <div className="flex flex-col sm:flex-row gap-1.5 sm:gap-4 pt-2 sm:pt-4 border-t border-white/5">
                   {product.link ? (
-                    <Button href={product.link} variant="primary" target="_blank" className="text-center justify-center py-2 sm:py-2.5 text-xs sm:text-sm">Visit Platform</Button>
+                    <Button href={product.link} variant="primary" target="_blank" className="text-center justify-center py-1.5 sm:py-2.5 text-[9px] sm:text-sm">Visit Platform</Button>
                   ) : (
-                    <Button href="/contact" variant="primary" className="text-center justify-center py-2 sm:py-2.5 text-xs sm:text-sm">Request Demo</Button>
+                    <Button href="/contact" variant="primary" className="text-center justify-center py-1.5 sm:py-2.5 text-[9px] sm:text-sm">Request Demo</Button>
                   )}
-                  <Button href="/contact" variant="outline" className="text-center justify-center py-2 sm:py-2.5 text-xs sm:text-sm">Learn More</Button>
+                  <Button href="/contact" variant="outline" className="text-center justify-center py-1.5 sm:py-2.5 text-[9px] sm:text-sm">Learn More</Button>
                 </div>
               </motion.div>
             ))}

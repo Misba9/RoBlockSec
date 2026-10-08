@@ -55,7 +55,7 @@ const ProductDevelopmentPage: React.FC = () => {
             </motion.div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-4 sm:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-2 gap-2.5 sm:gap-8">
             {sections.map((section, index) => (
                 <motion.div
                     key={index}
@@ -63,18 +63,18 @@ const ProductDevelopmentPage: React.FC = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="card-bg p-4 sm:p-6 md:p-8 rounded-xl glowing-border flex items-start gap-3.5 sm:gap-6"
+                    className="card-bg p-3 sm:p-6 md:p-8 rounded-xl glowing-border flex flex-col sm:flex-row items-start gap-2 sm:gap-6"
                 >
-                    <section.icon className="w-8 h-8 sm:w-12 sm:h-12 text-brand-cyan light:text-brand-blue flex-shrink-0 mt-1" />
+                    <section.icon className="w-5 h-5 sm:w-12 sm:h-12 text-brand-cyan light:text-brand-blue flex-shrink-0 mt-0.5" />
                     <div>
-                        <h3 className="text-base sm:text-xl font-bold font-display text-white light:text-light-text mb-1.5 sm:mb-2">{section.title}</h3>
-                        <p className="text-gray-400 light:text-gray-600 text-xs sm:text-sm leading-relaxed">{section.description}</p>
+                        <h3 className="text-xs sm:text-xl font-bold font-display text-white light:text-light-text mb-1 sm:mb-2">{section.title}</h3>
+                        <p className="text-gray-400 light:text-gray-600 text-[9px] sm:text-sm leading-snug sm:leading-relaxed">{section.description}</p>
                     </div>
                 </motion.div>
             ))}
         </div>
-        <div className="text-center mt-8 sm:mt-16">
-            <Button href="/contact" variant="primary" className="text-xs sm:text-base py-2.5 sm:py-3.5 px-6 sm:px-8">Partner With Us for Research</Button>
+        <div className="text-center mt-6 sm:mt-16">
+            <Button href="/contact" variant="primary" className="text-xs sm:text-base py-2 sm:py-3.5 px-4 sm:px-8">Partner With Us for Research</Button>
         </div>
       </div>
       

@@ -44,21 +44,21 @@ const AboutPage: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-8 sm:py-16 md:py-20 bg-brand-navy/50">
-        <div className="container mx-auto px-3 sm:px-6 text-center">
-          <h2 className="text-xl sm:text-3xl font-display font-bold text-white mb-6 sm:mb-12">Our Core Values</h2>
+      <section className="py-6 sm:py-16 md:py-20 bg-brand-navy/50">
+        <div className="container mx-auto px-2.5 sm:px-6 text-center">
+          <h2 className="text-base sm:text-3xl font-display font-bold text-white mb-4 sm:mb-12">Our Core Values</h2>
           <motion.div 
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6"
+            className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-6"
           >
             {CORE_VALUES.map(value => (
-              <motion.div key={value.title} variants={itemVariants} className="bg-brand-navy p-3.5 sm:p-6 rounded-xl sm:rounded-2xl glowing-border flex flex-col items-center text-center">
-                <value.icon className="w-7 h-7 sm:w-12 sm:h-12 text-brand-cyan mb-2 sm:mb-4" />
-                <h3 className="text-sm sm:text-xl font-bold text-white font-display">{value.title}</h3>
-                <p className="text-gray-300 mt-1 sm:mt-2 text-[11px] sm:text-sm leading-relaxed">{value.description}</p>
+              <motion.div key={value.title} variants={itemVariants} className="bg-brand-navy p-2.5 sm:p-6 rounded-xl sm:rounded-2xl glowing-border flex flex-col items-center text-center">
+                <value.icon className="w-5 h-5 sm:w-12 sm:h-12 text-brand-cyan mb-1.5 sm:mb-4" />
+                <h3 className="text-xs sm:text-xl font-bold text-white font-display leading-tight">{value.title}</h3>
+                <p className="text-gray-300 mt-1 text-[9px] sm:text-sm leading-snug">{value.description}</p>
               </motion.div>
             ))}
           </motion.div>

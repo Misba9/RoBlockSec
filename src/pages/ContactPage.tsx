@@ -39,20 +39,20 @@ const ContactPage: React.FC = () => {
             >
               <h2 className="text-xl sm:text-2xl font-display font-bold text-white mb-4 sm:mb-6 border-l-4 border-brand-purple pl-3">Contact Information</h2>
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                <div className="p-3 sm:p-4 rounded-xl bg-white/5 border border-white/10 flex items-start gap-3 hover:border-brand-cyan/30 transition-all">
-                  <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-brand-cyan mt-0.5 shrink-0" />
+              <div className="grid grid-cols-2 gap-2 sm:gap-4">
+                <div className="p-2.5 sm:p-4 rounded-xl bg-white/5 border border-white/10 flex items-start gap-2 sm:gap-3 hover:border-brand-cyan/30 transition-all">
+                  <Mail className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-brand-cyan mt-0.5 shrink-0" />
                   <div>
-                    <h3 className="text-xs sm:text-sm font-bold text-white font-display">Email Us</h3>
-                    <a href="mailto:info@roblocksec.com" className="text-gray-300 text-xs sm:text-sm hover:text-brand-cyan transition block mt-0.5">info@roblocksec.com</a>
+                    <h3 className="text-[11px] sm:text-sm font-bold text-white font-display leading-tight">Email Us</h3>
+                    <a href="mailto:info@roblocksec.com" className="text-gray-300 text-[10px] sm:text-sm hover:text-brand-cyan transition block mt-0.5 truncate max-w-[120px] sm:max-w-none">info@roblocksec.com</a>
                   </div>
                 </div>
 
-                <div className="p-3 sm:p-4 rounded-xl bg-white/5 border border-white/10 flex items-start gap-3 hover:border-brand-cyan/30 transition-all">
-                  <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-brand-cyan mt-0.5 shrink-0" />
+                <div className="p-2.5 sm:p-4 rounded-xl bg-white/5 border border-white/10 flex items-start gap-2 sm:gap-3 hover:border-brand-cyan/30 transition-all">
+                  <Phone className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-brand-cyan mt-0.5 shrink-0" />
                   <div>
-                    <h3 className="text-xs sm:text-sm font-bold text-white font-display">Direct Phone</h3>
-                    <a href="tel:+919347012418" className="text-gray-300 text-xs sm:text-sm hover:text-brand-cyan transition block mt-0.5">+91 93470 12418</a>
+                    <h3 className="text-[11px] sm:text-sm font-bold text-white font-display leading-tight">Direct Phone</h3>
+                    <a href="tel:+919347012418" className="text-gray-300 text-[10px] sm:text-sm hover:text-brand-cyan transition block mt-0.5 truncate max-w-[120px] sm:max-w-none">+91 93470 12418</a>
                   </div>
                 </div>
               </div>

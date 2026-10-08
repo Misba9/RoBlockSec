@@ -33,7 +33,7 @@ const RedTeamingPage: React.FC = () => {
             <p className="text-gray-300 light:text-gray-600 text-xs sm:text-base leading-relaxed">We provide a holistic approach to vulnerability assessment and penetration testing, covering every critical component of your digital infrastructure. Explore our specialized services to see how we can fortify your defenses.</p>
         </div>
         <motion.div 
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
+            className="grid grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-6"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -45,11 +45,11 @@ const RedTeamingPage: React.FC = () => {
               variants={itemVariants}
               className="h-full"
             >
-              <div className="card-bg p-4 sm:p-6 rounded-xl glowing-border h-full flex flex-col text-center items-center">
-                <sub.icon className="w-10 h-10 sm:w-14 sm:h-14 text-brand-cyan light:text-brand-blue mb-3 sm:mb-4" />
-                <h3 className="text-base sm:text-lg font-bold font-display text-white light:text-light-text mb-2">{sub.name}</h3>
+              <div className="card-bg p-3 sm:p-6 rounded-xl glowing-border h-full flex flex-col text-center items-center">
+                <sub.icon className="w-6 h-6 sm:w-14 sm:h-14 text-brand-cyan light:text-brand-blue mb-2 sm:mb-4" />
+                <h3 className="text-xs sm:text-lg font-bold font-display text-white light:text-light-text mb-1 sm:mb-2">{sub.name}</h3>
                 <div className="flex-grow"></div>
-                <Button href={`/services/${service.slug}/${sub.slug}`} variant="outline" className="mt-4 text-xs sm:text-sm py-2 px-4">
+                <Button href={`/services/${service.slug}/${sub.slug}`} variant="outline" className="mt-2.5 sm:mt-4 text-[9px] sm:text-sm py-1.5 px-2.5 sm:py-2 sm:px-4 w-full sm:w-auto">
                   Learn More
                 </Button>
               </div>
