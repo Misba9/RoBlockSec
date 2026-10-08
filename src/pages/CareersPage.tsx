@@ -9,19 +9,19 @@ const JobListing: React.FC<{ job: typeof DEMO_CAREERS[0] }> = ({ job }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div className="bg-brand-navy glowing-border rounded-xl mb-3 sm:mb-4">
+        <div className="bg-brand-navy glowing-border rounded-xl mb-2 sm:mb-4">
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="w-full p-4 sm:p-6 text-left flex justify-between items-center"
+                className="w-full p-2.5 sm:p-5 text-left flex justify-between items-center"
             >
                 <div>
-                    <h3 className="text-base sm:text-xl font-bold font-display text-white">{job.title}</h3>
-                    <div className="flex items-center gap-3 text-xs sm:text-sm text-gray-400 mt-1 sm:mt-2">
-                        <span className="flex items-center gap-1.5"><MapPin size={13} /> {job.location}</span>
-                        <span className="flex items-center gap-1.5"><Briefcase size={13} /> {job.type}</span>
+                    <h3 className="text-xs sm:text-base md:text-lg font-bold font-display text-white">{job.title}</h3>
+                    <div className="flex items-center gap-2.5 text-[10px] sm:text-xs text-gray-400 mt-0.5 sm:mt-1.5">
+                        <span className="flex items-center gap-1"><MapPin size={11} /> {job.location}</span>
+                        <span className="flex items-center gap-1"><Briefcase size={11} /> {job.type}</span>
                     </div>
                 </div>
-                {isOpen ? <ChevronUp className="text-brand-cyan shrink-0" size={18} /> : <ChevronDown className="text-brand-cyan shrink-0" size={18} />}
+                {isOpen ? <ChevronUp className="text-brand-cyan shrink-0" size={15} /> : <ChevronDown className="text-brand-cyan shrink-0" size={15} />}
             </button>
             <AnimatePresence>
                 {isOpen && (
@@ -32,13 +32,13 @@ const JobListing: React.FC<{ job: typeof DEMO_CAREERS[0] }> = ({ job }) => {
                         transition={{ duration: 0.3 }}
                         className="overflow-hidden"
                     >
-                        <div className="px-4 pb-4 sm:px-6 sm:pb-6 border-t border-brand-cyan/20">
-                            <p className="text-gray-300 text-xs sm:text-sm mt-3 mb-3 leading-relaxed">{job.description}</p>
-                            <h4 className="font-bold text-white text-xs sm:text-sm mb-1.5">Requirements:</h4>
-                            <ul className="list-disc list-inside text-gray-400 text-xs sm:text-sm space-y-1">
+                        <div className="px-3 pb-3 sm:px-6 sm:pb-6 border-t border-brand-cyan/20">
+                            <p className="text-gray-300 text-[10px] sm:text-sm mt-2 mb-2 sm:mt-3 sm:mb-3 leading-snug sm:leading-relaxed">{job.description}</p>
+                            <h4 className="font-bold text-white text-[10px] sm:text-sm mb-1 sm:mb-1.5">Requirements:</h4>
+                            <ul className="list-disc list-inside text-gray-400 text-[9px] sm:text-sm space-y-0.5 sm:space-y-1">
                                 {job.requirements.map((req, i) => <li key={i}>{req}</li>)}
                             </ul>
-                            <Button href="#apply-form" variant="primary" className="mt-4 text-xs sm:text-sm py-2 px-4">Apply Now</Button>
+                            <Button href="#apply-form" variant="primary" className="mt-2.5 sm:mt-4 text-[9px] sm:text-sm py-1.5 sm:py-2 px-3 sm:px-4">Apply Now</Button>
                         </div>
                     </motion.div>
                 )}
@@ -102,13 +102,13 @@ const CareersPage: React.FC = () => {
                 </motion.div>
             </div>
 
-            <h2 className="text-xl sm:text-3xl font-display font-bold text-white text-center mb-6 sm:mb-12">Open Positions</h2>
+            <h2 className="text-base sm:text-3xl font-display font-bold text-white text-center mb-4 sm:mb-12">Open Positions</h2>
             <div className="max-w-4xl mx-auto">
                 {DEMO_CAREERS.map(job => <JobListing key={job.title} job={job} />)}
             </div>
 
-            <div id="apply-form" className="max-w-4xl mx-auto mt-10 sm:mt-20 pt-8 sm:pt-12 border-t border-brand-cyan/20">
-                <h2 className="text-xl sm:text-3xl font-display font-bold text-white text-center mb-6 sm:mb-8">Apply Now</h2>
+            <div id="apply-form" className="max-w-4xl mx-auto mt-8 sm:mt-20 pt-6 sm:pt-12 border-t border-brand-cyan/20">
+                <h2 className="text-base sm:text-3xl font-display font-bold text-white text-center mb-4 sm:mb-8">Apply Now</h2>
                 <form className="space-y-4 sm:space-y-6" onSubmit={handleSubmit}>
                     <div className="grid md:grid-cols-2 gap-3 sm:gap-6">
                         <div>

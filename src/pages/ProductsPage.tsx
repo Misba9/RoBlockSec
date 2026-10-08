@@ -79,24 +79,24 @@ const ProductsPage: React.FC = () => {
                 className="glass-card p-3 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl md:rounded-[2rem] border border-white/5 hover:border-brand-cyan/30 transition-all group flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex items-center justify-between gap-1.5 mb-2 sm:mb-6 flex-wrap">
-                    <div className={`w-7 h-7 sm:w-14 sm:h-14 rounded-lg sm:rounded-xl ${product.bgClass} flex items-center justify-center group-hover:scale-105 transition-transform`}>
-                      <product.icon className={`${product.colorClass} w-3.5 h-3.5 sm:w-7 sm:h-7`} />
+                  <div className="flex items-center justify-between gap-1 mb-2 sm:mb-6 flex-wrap">
+                    <div className={`w-6 h-6 sm:w-14 sm:h-14 rounded-lg sm:rounded-xl ${product.bgClass} flex items-center justify-center group-hover:scale-105 transition-transform`}>
+                      <product.icon className={`${product.colorClass} w-3 h-3 sm:w-7 sm:h-7`} />
                     </div>
                     {product.badge && (
-                      <span className="text-[8px] sm:text-xs font-mono px-1.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-right">
+                      <span className="text-[7px] sm:text-xs font-mono px-1.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-right truncate max-w-[100px] sm:max-w-none">
                         {product.badge}
                       </span>
                     )}
                   </div>
-                  <h3 className="text-xs sm:text-2xl lg:text-3xl font-display font-bold text-white mb-1 sm:mb-3">{product.title}</h3>
-                  <p className="text-gray-300 text-[10px] sm:text-sm lg:text-base mb-2.5 sm:mb-6 leading-snug sm:leading-relaxed">
+                  <h3 className="text-xs sm:text-2xl lg:text-3xl font-display font-bold text-white mb-1 sm:mb-3 line-clamp-1">{product.title}</h3>
+                  <p className="text-gray-300 text-[9px] sm:text-sm lg:text-base mb-2 sm:mb-6 leading-snug sm:leading-relaxed line-clamp-3">
                     {product.description}
                   </p>
                   
-                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1 sm:gap-2.5 mb-3 sm:mb-6">
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1 sm:gap-2.5 mb-2.5 sm:mb-6">
                     {product.features.map(feature => (
-                      <li key={feature} className="flex items-center gap-1.5 text-gray-300 text-[9px] sm:text-sm">
+                      <li key={feature} className="flex items-center gap-1 text-gray-300 text-[8px] sm:text-sm">
                         <div className={`w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full shrink-0 ${product.dotClass}`}></div>
                         <span className="truncate sm:whitespace-normal">{feature}</span>
                       </li>
@@ -104,13 +104,13 @@ const ProductsPage: React.FC = () => {
                   </ul>
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-1.5 sm:gap-4 pt-2 sm:pt-4 border-t border-white/5">
+                <div className="flex flex-col sm:flex-row gap-1 sm:gap-4 pt-2 sm:pt-4 border-t border-white/5 mt-auto">
                   {product.link ? (
-                    <Button href={product.link} variant="primary" target="_blank" className="text-center justify-center py-1.5 sm:py-2.5 text-[9px] sm:text-sm">Visit Platform</Button>
+                    <Button href={product.link} variant="primary" target="_blank" className="text-center justify-center py-1 sm:py-2.5 px-1.5 text-[8px] sm:text-sm">Visit Platform</Button>
                   ) : (
-                    <Button href="/contact" variant="primary" className="text-center justify-center py-1.5 sm:py-2.5 text-[9px] sm:text-sm">Request Demo</Button>
+                    <Button href="/contact" variant="primary" className="text-center justify-center py-1 sm:py-2.5 px-1.5 text-[8px] sm:text-sm">Request Demo</Button>
                   )}
-                  <Button href="/contact" variant="outline" className="text-center justify-center py-1.5 sm:py-2.5 text-[9px] sm:text-sm">Learn More</Button>
+                  <Button href="/contact" variant="outline" className="text-center justify-center py-1 sm:py-2.5 px-1.5 text-[8px] sm:text-sm">Learn More</Button>
                 </div>
               </motion.div>
             ))}

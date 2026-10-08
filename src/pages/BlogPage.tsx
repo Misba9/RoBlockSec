@@ -39,7 +39,7 @@ const BlogPage: React.FC = () => {
         </div>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8"
+          className="grid grid-cols-2 md:grid-cols-2 gap-2.5 sm:gap-8"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -51,23 +51,25 @@ const BlogPage: React.FC = () => {
               className="bg-brand-navy rounded-xl overflow-hidden glowing-border group flex flex-col"
             >
               <div className="relative">
-                <img src={post.image} alt={post.title} className="w-full h-44 sm:h-64 object-cover transition-transform duration-300 group-hover:scale-105" />
+                <img src={post.image} alt={post.title} className="w-full h-24 sm:h-64 object-cover transition-transform duration-300 group-hover:scale-105" />
               </div>
-              <div className="p-4 sm:p-6 flex flex-col flex-grow">
-                <div className="flex items-center text-xs text-gray-400 mb-2.5 sm:mb-4 gap-3">
-                    <div className="flex items-center gap-1.5">
-                        <Tag size={13} className="text-brand-cyan" />
+              <div className="p-2.5 sm:p-6 flex flex-col flex-grow">
+                <div className="flex items-center text-[8px] sm:text-xs text-gray-400 mb-1.5 sm:mb-4 gap-1.5 sm:gap-3 flex-wrap">
+                    <div className="flex items-center gap-1">
+                        <Tag size={10} className="text-brand-cyan sm:hidden" />
+                        <Tag size={13} className="text-brand-cyan hidden sm:block" />
                         <span>{post.category}</span>
                     </div>
-                    <div className="flex items-center gap-1.5">
-                        <Calendar size={13} className="text-brand-cyan" />
+                    <div className="flex items-center gap-1">
+                        <Calendar size={10} className="text-brand-cyan sm:hidden" />
+                        <Calendar size={13} className="text-brand-cyan hidden sm:block" />
                         <span>{post.date}</span>
                     </div>
                 </div>
-                <h3 className="text-base sm:text-2xl font-bold font-display text-white mb-2 flex-grow">{post.title}</h3>
-                <p className="text-gray-300 text-xs sm:text-sm mb-4 leading-relaxed">{post.excerpt}</p>
-                <div>
-                  <Button href="#" variant="outline" className="text-xs sm:text-sm py-2 px-4">Read Full Article</Button>
+                <h3 className="text-xs sm:text-2xl font-bold font-display text-white mb-1.5 line-clamp-2">{post.title}</h3>
+                <p className="text-gray-300 text-[9px] sm:text-sm mb-2.5 sm:mb-4 leading-snug sm:leading-relaxed line-clamp-2">{post.excerpt}</p>
+                <div className="mt-auto">
+                  <Button href="#" variant="outline" className="w-full text-center justify-center text-[9px] sm:text-sm py-1 sm:py-2 px-2">Read Full Article</Button>
                 </div>
               </div>
             </motion.div>

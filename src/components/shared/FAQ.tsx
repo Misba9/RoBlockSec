@@ -38,16 +38,16 @@ const FAQ: React.FC<FAQProps> = ({ items }) => {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <div className="container mx-auto px-3 sm:px-6">
-        <h2 className="text-xl sm:text-3xl font-display font-bold text-white light:text-light-text text-center mb-6 sm:mb-12">Frequently Asked Questions</h2>
-        <div className="max-w-4xl mx-auto space-y-3 sm:space-y-4">
+        <h2 className="text-base sm:text-3xl font-display font-bold text-white light:text-light-text text-center mb-4 sm:mb-12">Frequently Asked Questions</h2>
+        <div className="max-w-4xl mx-auto space-y-2 sm:space-y-4">
           {items.map((item, index) => (
             <div key={index} className="glowing-border card-bg rounded-xl overflow-hidden">
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full p-4 sm:p-6 text-left flex justify-between items-center"
+                className="w-full p-2.5 sm:p-6 text-left flex justify-between items-center"
               >
-                <h3 className="text-sm sm:text-lg font-semibold text-white light:text-light-text pr-3">{item.q}</h3>
-                {activeIndex === index ? <ChevronUp className="text-brand-cyan light:text-brand-blue shrink-0" size={18} /> : <ChevronDown className="text-brand-cyan light:text-brand-blue shrink-0" size={18} />}
+                <h3 className="text-xs sm:text-lg font-semibold text-white light:text-light-text pr-2.5">{item.q}</h3>
+                {activeIndex === index ? <ChevronUp className="text-brand-cyan light:text-brand-blue shrink-0" size={15} /> : <ChevronDown className="text-brand-cyan light:text-brand-blue shrink-0" size={15} />}
               </button>
               <AnimatePresence>
                 {activeIndex === index && (
@@ -58,7 +58,7 @@ const FAQ: React.FC<FAQProps> = ({ items }) => {
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden"
                   >
-                    <div className="px-4 pb-4 sm:px-6 sm:pb-6 text-gray-300 light:text-gray-600 text-xs sm:text-sm leading-relaxed">
+                    <div className="px-3 pb-3 sm:px-6 sm:pb-6 text-gray-300 light:text-gray-600 text-[10px] sm:text-sm leading-snug sm:leading-relaxed">
                       <p>{item.a}</p>
                     </div>
                   </motion.div>
