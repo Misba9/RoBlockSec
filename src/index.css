@@ -9,11 +9,22 @@
   html {
     @apply scroll-smooth;
     color-scheme: dark;
+    overflow-x: hidden;
+    width: 100%;
+    -webkit-tap-highlight-color: transparent;
   }
 
   body {
     @apply bg-brand-dark text-gray-300 font-body antialiased;
     min-height: 100vh;
+    overflow-x: hidden;
+    width: 100%;
+    touch-action: manipulation;
+  }
+
+  #root {
+    overflow-x: hidden;
+    width: 100%;
   }
 
   *,
@@ -217,4 +228,6 @@
 @layer utilities {
   .animate-glow        { animation: glow 4s ease-in-out infinite alternate; }
   .animate-border-glow { animation: border-glow 4s ease-in-out infinite alternate; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 }

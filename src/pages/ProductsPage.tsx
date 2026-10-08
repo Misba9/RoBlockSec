@@ -66,37 +66,37 @@ const ProductsPage: React.FC = () => {
         subtitle="Innovation-driven security tools engineered for the modern threat landscape." 
       />
 
-      <section className="py-24 px-6">
+      <section className="py-16 sm:py-24 px-4 sm:px-6">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-2 gap-8 sm:gap-12">
             {products.map((product, index) => (
               <motion.div
                 key={product.title}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="glass-card p-10 rounded-[2.5rem] border border-white/5 hover:border-brand-cyan/30 transition-all group flex flex-col justify-between"
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="glass-card p-6 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl md:rounded-[2.5rem] border border-white/5 hover:border-brand-cyan/30 transition-all group flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex items-center justify-between gap-4 mb-8">
-                    <div className={`w-20 h-20 rounded-2xl ${product.bgClass} flex items-center justify-center group-hover:scale-110 transition-transform`}>
-                      <product.icon className={`${product.colorClass} w-10 h-10`} />
+                  <div className="flex items-center justify-between gap-3 mb-6 sm:mb-8">
+                    <div className={`w-14 h-14 sm:w-20 sm:h-20 rounded-xl sm:rounded-2xl ${product.bgClass} flex items-center justify-center group-hover:scale-105 transition-transform`}>
+                      <product.icon className={`${product.colorClass} w-7 h-7 sm:w-10 sm:h-10`} />
                     </div>
                     {product.badge && (
-                      <span className="text-xs font-mono px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300">
+                      <span className="text-[11px] sm:text-xs font-mono px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-right">
                         {product.badge}
                       </span>
                     )}
                   </div>
-                  <h3 className="text-3xl lg:text-4xl font-display font-bold text-white mb-4">{product.title}</h3>
-                  <p className="text-gray-400 text-base lg:text-lg mb-8 leading-relaxed">
+                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-display font-bold text-white mb-3 sm:mb-4">{product.title}</h3>
+                  <p className="text-gray-300 text-sm sm:text-base lg:text-lg mb-6 sm:mb-8 leading-relaxed">
                     {product.description}
                   </p>
                   
-                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3 mb-8">
                     {product.features.map(feature => (
-                      <li key={feature} className="flex items-center gap-3 text-gray-300 text-sm">
+                      <li key={feature} className="flex items-center gap-2.5 text-gray-300 text-xs sm:text-sm">
                         <div className={`w-2 h-2 rounded-full shrink-0 ${product.dotClass}`}></div>
                         <span>{feature}</span>
                       </li>
@@ -104,13 +104,13 @@ const ProductsPage: React.FC = () => {
                   </ul>
                 </div>
 
-                <div className="flex flex-wrap gap-4 pt-4 border-t border-white/5">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4 border-t border-white/5">
                   {product.link ? (
-                    <Button href={product.link} variant="primary" target="_blank">Visit Platform</Button>
+                    <Button href={product.link} variant="primary" target="_blank" className="text-center justify-center py-2.5 sm:py-3">Visit Platform</Button>
                   ) : (
-                    <Button href="/contact" variant="primary">Request Demo</Button>
+                    <Button href="/contact" variant="primary" className="text-center justify-center py-2.5 sm:py-3">Request Demo</Button>
                   )}
-                  <Button href="/contact" variant="outline">Learn More</Button>
+                  <Button href="/contact" variant="outline" className="text-center justify-center py-2.5 sm:py-3">Learn More</Button>
                 </div>
               </motion.div>
             ))}
@@ -119,10 +119,10 @@ const ProductsPage: React.FC = () => {
       </section>
 
       {/* Product Vision Section */}
-      <section className="py-24 bg-black/30 border-y border-white/5">
-        <div className="container mx-auto px-6 text-center max-w-4xl">
-          <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-8">Engineering the Future of Defense</h2>
-          <p className="text-gray-400 text-xl leading-relaxed">
+      <section className="py-16 sm:py-24 bg-black/30 border-y border-white/5 px-4 sm:px-6">
+        <div className="container mx-auto text-center max-w-4xl">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-display font-bold text-white mb-4 sm:mb-8">Engineering the Future of Defense</h2>
+          <p className="text-gray-300 text-sm sm:text-base md:text-xl leading-relaxed">
             Our product development team is constantly pushing the boundaries of what's possible in cybersecurity. We don't just build tools; we build intelligent ecosystems that adapt and evolve alongside the threats they defend against.
           </p>
         </div>
@@ -132,3 +132,4 @@ const ProductsPage: React.FC = () => {
 };
 
 export default ProductsPage;
+

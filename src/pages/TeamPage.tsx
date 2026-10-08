@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import PageHero from '../components/ui/PageHero';
 import { DEMO_TEAM } from '../constants';
 import Button from '../components/ui/Button';
+import { Helmet } from 'react-helmet-async';
 
 const getInitials = (name: string) => {
   return name
@@ -15,40 +16,45 @@ const getInitials = (name: string) => {
 const TeamPage: React.FC = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
+    visible: { opacity: 1, transition: { staggerChildren: 0.15 } },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
 
   return (
     <div>
+      <Helmet>
+        <title>Our Leadership & Cybersecurity Team | Roblocksec</title>
+        <meta name="description" content="Meet the leadership, security leads, and researchers defending our clients at Roblocksec." />
+      </Helmet>
+
       <PageHero 
         title="Our Team"
         subtitle="Meet the elite cybersecurity professionals protecting the digital world."
       />
-      <div className="py-20 container mx-auto px-6">
+      <div className="py-16 sm:py-20 container mx-auto px-4 sm:px-6">
         {DEMO_TEAM.filter(m => m.category === 'founding').length > 0 && (
-          <div className="mb-20">
-            <h2 className="text-3xl font-display font-bold text-white mb-8 border-l-4 border-brand-cyan pl-6">Founding Directorate</h2>
+          <div className="mb-16 sm:mb-20">
+            <h2 className="text-2xl sm:text-3xl font-display font-bold text-white mb-6 sm:mb-8 border-l-4 border-brand-cyan pl-4 sm:pl-6">Founding Directorate</h2>
             <motion.div 
-              className="flex flex-wrap justify-center gap-8"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-8 justify-items-center"
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
+              viewport={{ once: true, amount: 0.1 }}
             >
               {DEMO_TEAM.filter(m => m.category === 'founding').map((member, index) => (
                 <motion.div
                   key={index}
                   variants={itemVariants}
-                  className="relative group overflow-hidden rounded-[2rem] bg-brand-navy glowing-border text-center w-full sm:w-[320px]"
+                  className="relative group overflow-hidden rounded-2xl sm:rounded-[2rem] bg-brand-navy glowing-border flex flex-col w-full max-w-[340px]"
                 >
-                  <div className="w-full h-80 bg-white flex items-center justify-center overflow-hidden">
+                  <div className="w-full h-64 sm:h-72 bg-brand-navy2/60 flex items-center justify-center overflow-hidden relative">
                     {member.image ? (
-                      <img src={member.image} alt={member.name} className="w-full h-full object-contain" />
+                      <img src={member.image} alt={member.name} className="w-full h-full object-contain p-2" />
                     ) : (
                       <div className="w-full h-full bg-gradient-to-br from-brand-navy2 to-brand-dark flex flex-col items-center justify-center relative">
                         <div className="w-20 h-20 rounded-full bg-gradient-to-tr from-brand-purple/20 to-brand-cyan/20 border border-brand-cyan/35 flex items-center justify-center shadow-[0_0_20px_rgba(232,80,0,0.15)] relative">
@@ -60,13 +66,17 @@ const TeamPage: React.FC = () => {
                       </div>
                     )}
                   </div>
-                  <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
-                    <h3 className="text-xl font-bold font-display text-white">{member.name}</h3>
-                    <p className="text-brand-cyan text-sm">{member.role}</p>
-                  </div>
-                  <div className="absolute inset-0 bg-black/80 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
-                    <h4 className="text-lg font-bold text-white">Specialization</h4>
-                    <p className="text-brand-cyan text-center">{member.specialization}</p>
+                  <div className="p-4 sm:p-5 bg-gradient-to-t from-black/90 to-black/60 flex-1 flex flex-col justify-between">
+                    <div>
+                      <h3 className="text-lg sm:text-xl font-bold font-display text-white">{member.name}</h3>
+                      <p className="text-brand-cyan text-xs sm:text-sm font-semibold mt-0.5">{member.role}</p>
+                    </div>
+                    {member.specialization && (
+                      <div className="mt-3 pt-3 border-t border-white/10">
+                        <span className="text-[10px] font-mono text-gray-400 uppercase tracking-wider block">Specialization</span>
+                        <span className="text-xs text-gray-200 mt-0.5 block">{member.specialization}</span>
+                      </div>
+                    )}
                   </div>
                 </motion.div>
               ))}
@@ -75,27 +85,27 @@ const TeamPage: React.FC = () => {
         )}
 
         {DEMO_TEAM.filter(m => m.category === 'vanguard').length > 0 && (
-          <div>
-            <h2 className="text-3xl font-display font-bold text-white mb-8 border-l-4 border-brand-purple pl-6">Nexalith Vanguard</h2>
+          <div className="mb-16 sm:mb-20">
+            <h2 className="text-2xl sm:text-3xl font-display font-bold text-white mb-6 sm:mb-8 border-l-4 border-brand-purple pl-4 sm:pl-6">Nexalith Vanguard</h2>
             <motion.div 
-              className="flex flex-wrap justify-center gap-8"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-8 justify-items-center"
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
+              viewport={{ once: true, amount: 0.1 }}
             >
               {DEMO_TEAM.filter(m => m.category === 'vanguard').map((member, index) => (
                 <motion.div
                   key={index}
                   variants={itemVariants}
-                  className="relative group overflow-hidden rounded-[2rem] bg-brand-navy glowing-border text-center w-full sm:w-[280px]"
+                  className="relative group overflow-hidden rounded-2xl sm:rounded-[2rem] bg-brand-navy glowing-border-purple flex flex-col w-full max-w-[340px]"
                 >
-                  <div className="w-full h-72 bg-white flex items-center justify-center overflow-hidden">
+                  <div className="w-full h-64 sm:h-72 bg-brand-navy2/60 flex items-center justify-center overflow-hidden relative">
                     {member.image ? (
-                      <img src={member.image} alt={member.name} className="w-full h-full object-contain" />
+                      <img src={member.image} alt={member.name} className="w-full h-full object-contain p-2" />
                     ) : (
                       <div className="w-full h-full bg-gradient-to-br from-brand-navy2 to-brand-dark flex flex-col items-center justify-center relative">
-                        <div className="w-16 h-16 rounded-full bg-gradient-to-tr from-brand-purple/20 to-brand-cyan/20 border border-brand-cyan/35 flex items-center justify-center shadow-[0_0_20px_rgba(232,80,0,0.15)] relative">
+                        <div className="w-16 h-16 rounded-full bg-gradient-to-tr from-brand-purple/20 to-brand-cyan/20 border border-brand-purple/35 flex items-center justify-center shadow-[0_0_20px_rgba(123,63,160,0.15)] relative">
                           <span className="text-xl font-display font-black text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-purple">
                             {getInitials(member.name)}
                           </span>
@@ -104,13 +114,17 @@ const TeamPage: React.FC = () => {
                       </div>
                     )}
                   </div>
-                  <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
-                    <h3 className="text-xl font-bold font-display text-white">{member.name}</h3>
-                    <p className="text-brand-cyan text-sm">{member.role}</p>
-                  </div>
-                  <div className="absolute inset-0 bg-black/80 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
-                    <h4 className="text-lg font-bold text-white">Specialization</h4>
-                    <p className="text-brand-cyan text-center">{member.specialization}</p>
+                  <div className="p-4 sm:p-5 bg-gradient-to-t from-black/90 to-black/60 flex-1 flex flex-col justify-between">
+                    <div>
+                      <h3 className="text-lg sm:text-xl font-bold font-display text-white">{member.name}</h3>
+                      <p className="text-brand-purple2 text-xs sm:text-sm font-semibold mt-0.5">{member.role}</p>
+                    </div>
+                    {member.specialization && (
+                      <div className="mt-3 pt-3 border-t border-white/10">
+                        <span className="text-[10px] font-mono text-gray-400 uppercase tracking-wider block">Specialization</span>
+                        <span className="text-xs text-gray-200 mt-0.5 block">{member.specialization}</span>
+                      </div>
+                    )}
                   </div>
                 </motion.div>
               ))}
@@ -119,24 +133,24 @@ const TeamPage: React.FC = () => {
         )}
 
         {DEMO_TEAM.filter(m => m.category === 'intern').length > 0 && (
-          <div className="mt-20">
-            <h2 className="text-3xl font-display font-bold text-white mb-8 border-l-4 border-brand-cyan pl-6">Interns</h2>
+          <div className="mt-16 sm:mt-20">
+            <h2 className="text-2xl sm:text-3xl font-display font-bold text-white mb-6 sm:mb-8 border-l-4 border-brand-cyan pl-4 sm:pl-6">Interns</h2>
             <motion.div 
-              className="flex flex-wrap justify-center gap-8"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-8 justify-items-center"
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
+              viewport={{ once: true, amount: 0.1 }}
             >
               {DEMO_TEAM.filter(m => m.category === 'intern').map((member, index) => (
                 <motion.div
                   key={index}
                   variants={itemVariants}
-                  className="relative group overflow-hidden rounded-[2rem] bg-brand-navy glowing-border text-center w-full sm:w-[280px]"
+                  className="relative group overflow-hidden rounded-2xl sm:rounded-[2rem] bg-brand-navy glowing-border flex flex-col w-full max-w-[340px]"
                 >
-                  <div className="w-full h-72 bg-white flex items-center justify-center overflow-hidden">
+                  <div className="w-full h-64 sm:h-72 bg-brand-navy2/60 flex items-center justify-center overflow-hidden relative">
                     {member.image ? (
-                      <img src={member.image} alt={member.name} className="w-full h-full object-contain" />
+                      <img src={member.image} alt={member.name} className="w-full h-full object-contain p-2" />
                     ) : (
                       <div className="w-full h-full bg-gradient-to-br from-brand-navy2 to-brand-dark flex flex-col items-center justify-center relative">
                         <div className="w-16 h-16 rounded-full bg-gradient-to-tr from-brand-purple/20 to-brand-cyan/20 border border-brand-cyan/35 flex items-center justify-center shadow-[0_0_20px_rgba(232,80,0,0.15)] relative">
@@ -148,13 +162,17 @@ const TeamPage: React.FC = () => {
                       </div>
                     )}
                   </div>
-                  <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
-                    <h3 className="text-xl font-bold font-display text-white">{member.name}</h3>
-                    <p className="text-brand-cyan text-sm">{member.role}</p>
-                  </div>
-                  <div className="absolute inset-0 bg-black/80 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
-                    <h4 className="text-lg font-bold text-white">Specialization</h4>
-                    <p className="text-brand-cyan text-center">{member.specialization}</p>
+                  <div className="p-4 sm:p-5 bg-gradient-to-t from-black/90 to-black/60 flex-1 flex flex-col justify-between">
+                    <div>
+                      <h3 className="text-lg sm:text-xl font-bold font-display text-white">{member.name}</h3>
+                      <p className="text-brand-cyan text-xs sm:text-sm font-semibold mt-0.5">{member.role}</p>
+                    </div>
+                    {member.specialization && (
+                      <div className="mt-3 pt-3 border-t border-white/10">
+                        <span className="text-[10px] font-mono text-gray-400 uppercase tracking-wider block">Specialization</span>
+                        <span className="text-xs text-gray-200 mt-0.5 block">{member.specialization}</span>
+                      </div>
+                    )}
                   </div>
                 </motion.div>
               ))}
@@ -162,8 +180,8 @@ const TeamPage: React.FC = () => {
           </div>
         )}
 
-        <div className="text-center mt-20">
-          <Button href="/careers" variant="primary" className="text-xl">
+        <div className="text-center mt-16 sm:mt-20">
+          <Button href="/careers" variant="primary" className="text-base sm:text-xl px-8 py-3.5">
             Join Our Team
           </Button>
         </div>
@@ -173,3 +191,4 @@ const TeamPage: React.FC = () => {
 };
 
 export default TeamPage;
+

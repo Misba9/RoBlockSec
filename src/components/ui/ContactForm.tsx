@@ -116,7 +116,7 @@ const ContactForm: React.FC = () => {
   };
 
   const inputClasses = (hasError: boolean, hasWarning: boolean) => `
-    w-full form-input border rounded-2xl px-5 py-4 focus:outline-none focus:ring-2 transition-all bg-brand-navy/30 text-white font-body placeholder-gray-500
+    w-full form-input border rounded-xl sm:rounded-2xl px-4 py-3 sm:px-5 sm:py-4 focus:outline-none focus:ring-2 transition-all bg-brand-navy/30 text-white font-body text-sm sm:text-base placeholder-gray-500
     ${hasError 
       ? 'border-red-500/50 focus:border-red-500 focus:ring-red-500/20' 
       : hasWarning 
@@ -126,30 +126,30 @@ const ContactForm: React.FC = () => {
   `;
 
   return (
-    <div className="glass-card p-8 md:p-10 rounded-[2.5rem] border border-white/5 relative overflow-hidden">
+    <div className="glass-card p-5 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl md:rounded-[2.5rem] border border-white/5 relative overflow-hidden">
       {/* Role Toggle Selector */}
-      <div className="flex bg-black/40 p-1.5 rounded-full border border-white/5 relative overflow-hidden mb-8">
+      <div className="flex bg-black/40 p-1 sm:p-1.5 rounded-full border border-white/5 relative overflow-hidden mb-6 sm:mb-8">
         <button
           type="button"
           onClick={() => handleRoleChange('organization')}
-          className={`flex-1 py-3 text-center rounded-full font-display font-semibold text-sm transition-all z-10 ${
+          className={`flex-1 py-2.5 sm:py-3 px-2 text-center rounded-full font-display font-semibold text-xs sm:text-sm transition-all z-10 ${
             role === 'organization' 
               ? 'text-brand-dark bg-brand-cyan shadow-[0_0_20px_rgba(0,255,255,0.3)]' 
               : 'text-gray-400 hover:text-white'
           }`}
         >
-          🏢 Organization / Enterprise
+          🏢 Organization
         </button>
         <button
           type="button"
           onClick={() => handleRoleChange('student')}
-          className={`flex-1 py-3 text-center rounded-full font-display font-semibold text-sm transition-all z-10 ${
+          className={`flex-1 py-2.5 sm:py-3 px-2 text-center rounded-full font-display font-semibold text-xs sm:text-sm transition-all z-10 ${
             role === 'student' 
               ? 'text-brand-dark bg-brand-cyan shadow-[0_0_20px_rgba(0,255,255,0.3)]' 
               : 'text-gray-400 hover:text-white'
           }`}
         >
-          🎓 Student / Individual
+          🎓 Student / Academy
         </button>
       </div>
 

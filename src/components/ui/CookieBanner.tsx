@@ -35,38 +35,38 @@ const CookieBanner: React.FC = () => {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 50, scale: 0.95 }}
           transition={{ duration: 0.35, ease: 'easeOut' }}
-          className="fixed bottom-6 left-6 right-6 md:left-auto md:right-8 md:max-w-md z-50 pointer-events-auto"
+          className="fixed bottom-3 left-3 right-3 sm:bottom-6 sm:left-auto sm:right-6 md:right-8 sm:max-w-md z-50 pointer-events-auto"
         >
-          <div className="glass-card p-6 rounded-3xl border border-brand-cyan/30 shadow-[0_10px_40px_rgba(0,0,0,0.8)] backdrop-blur-xl relative overflow-hidden bg-brand-navy/90">
+          <div className="glass-card p-4 sm:p-6 rounded-2xl sm:rounded-3xl border border-brand-cyan/30 shadow-[0_10px_40px_rgba(0,0,0,0.85)] backdrop-blur-xl relative overflow-hidden bg-brand-navy/95">
             {/* Background ambient glow */}
-            <div className="absolute -top-10 -right-10 w-28 h-28 bg-brand-cyan/20 rounded-full blur-2xl pointer-events-none" />
-            <div className="absolute -bottom-10 -left-10 w-28 h-28 bg-brand-purple/20 rounded-full blur-2xl pointer-events-none" />
+            <div className="absolute -top-10 -right-10 w-24 h-24 bg-brand-cyan/20 rounded-full blur-2xl pointer-events-none" />
+            <div className="absolute -bottom-10 -left-10 w-24 h-24 bg-brand-purple/20 rounded-full blur-2xl pointer-events-none" />
 
             {/* Header / Dismiss */}
-            <div className="flex items-start justify-between gap-4 mb-3 relative z-10">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan">
-                  <Cookie size={20} />
+            <div className="flex items-start justify-between gap-3 mb-2 sm:mb-3 relative z-10">
+              <div className="flex items-center gap-2.5 sm:gap-3">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan shrink-0">
+                  <Cookie size={18} className="sm:w-5 sm:h-5" />
                 </div>
                 <div>
-                  <h4 className="font-display font-bold text-white text-base">Cookie & Privacy Preferences</h4>
-                  <span className="text-[11px] font-mono text-brand-cyan/80 flex items-center gap-1">
-                    <ShieldCheck size={12} /> DPDPA & GDPR Compliant
+                  <h4 className="font-display font-bold text-white text-sm sm:text-base">Cookie Preferences</h4>
+                  <span className="text-[10px] sm:text-[11px] font-mono text-brand-cyan flex items-center gap-1">
+                    <ShieldCheck size={12} /> DPDPA &amp; GDPR Compliant
                   </span>
                 </div>
               </div>
               <button 
                 onClick={handleAcceptEssential} 
-                className="text-gray-400 hover:text-white p-1 transition-colors"
+                className="text-gray-400 hover:text-white p-1 transition-colors shrink-0"
                 aria-label="Dismiss cookie notice"
               >
-                <X size={18} />
+                <X size={16} className="sm:w-4 sm:h-4" />
               </button>
             </div>
 
             {/* Body Text */}
-            <p className="text-gray-300 text-xs leading-relaxed mb-5 relative z-10">
-              We utilize essential and performance cookies to analyze web traffic, enhance platform security, and ensure an optimal browsing experience in accordance with our{' '}
+            <p className="text-gray-300 text-xs leading-relaxed mb-4 relative z-10">
+              We utilize essential cookies to analyze web traffic, enhance platform security, and ensure an optimal browsing experience in accordance with our{' '}
               <Link to="/privacy" className="text-brand-cyan underline hover:text-white transition-colors">
                 Privacy Policy
               </Link>{' '}
@@ -77,10 +77,10 @@ const CookieBanner: React.FC = () => {
             </p>
 
             {/* Actions */}
-            <div className="flex items-center gap-3 relative z-10">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3 relative z-10">
               <button
                 onClick={handleAcceptAll}
-                className="flex-1 py-2.5 px-4 rounded-xl bg-gradient-to-r from-brand-cyan to-brand-blue text-brand-dark font-display font-bold text-xs shadow-[0_0_15px_rgba(0,255,255,0.3)] hover:brightness-110 transition-all text-center"
+                className="py-2.5 px-4 rounded-xl bg-gradient-to-r from-brand-cyan to-brand-blue text-white font-display font-bold text-xs shadow-[0_0_15px_rgba(232,80,0,0.3)] hover:brightness-110 transition-all text-center"
               >
                 Accept All
               </button>
