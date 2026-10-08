@@ -19,22 +19,22 @@ const HomePage: React.FC = () => {
       {/* Minimal grid lines */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(232,80,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(232,80,0,0.03)_1px,transparent_1px)] bg-[size:32px_32px] sm:bg-[size:64px_64px] pointer-events-none" />
 
-      {/* 10-Years Ahead Spatial Hero Section */}
-      <section className="relative min-h-[90vh] sm:min-h-[100vh] flex items-center px-4 sm:px-8 md:px-12 lg:px-24 pt-24 sm:pt-32 pb-16 sm:pb-24">
-        <div className="w-full grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+      {/* Spatial Hero Section */}
+      <section className="relative min-h-auto md:min-h-[90vh] flex items-center px-4 sm:px-8 md:px-12 lg:px-24 pt-16 sm:pt-24 md:pt-32 pb-8 sm:pb-16">
+        <div className="w-full grid lg:grid-cols-12 gap-6 lg:gap-12 items-center">
           
           <motion.div 
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-7 z-10"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand-cyan/25 bg-brand-cyan/10 mb-6">
-              <span className="w-2 h-2 rounded-full bg-brand-cyan animate-pulse"></span>
-              <span className="text-[11px] sm:text-xs font-mono text-brand-cyan tracking-wider uppercase font-semibold">Est. 2024 · Hyderabad, India</span>
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border border-brand-cyan/25 bg-brand-cyan/10 mb-3 sm:mb-5">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand-cyan animate-pulse"></span>
+              <span className="text-[10px] sm:text-xs font-mono text-brand-cyan tracking-wider uppercase font-semibold">Est. 2024 · Hyderabad, India</span>
             </div>
 
-            <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-display font-black leading-[0.95] sm:leading-[0.88] tracking-tight break-words">
+            <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-black leading-[1.05] sm:leading-[0.9] tracking-tight break-words">
               <span className="text-white">Nexalith</span>
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan via-orange-400 to-brand-purple">
@@ -42,58 +42,58 @@ const HomePage: React.FC = () => {
               </span>
             </h1>
 
-            <p className="mt-4 sm:mt-6 max-w-lg text-sm sm:text-base text-gray-300 font-body leading-relaxed">
-              The unbreakable foundation of next-gen cyber — GRC, IoT, OT, OffSec, DevSec, forensics &amp; beyond. First. Strongest. Unmatched.
+            <p className="mt-2.5 sm:mt-4 max-w-lg text-xs sm:text-sm md:text-base text-gray-300 font-body leading-relaxed">
+              The unbreakable foundation of next-gen cyber &mdash; GRC, IoT, OT, OffSec, DevSec, forensics &amp; beyond. First. Strongest. Unmatched.
             </p>
             
-            <div className="mt-8 sm:mt-12 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6">
-              <Button href="/contact" variant="primary" className="text-base sm:text-lg py-3.5 sm:py-4 px-8 rounded-full shadow-[0_0_30px_rgba(232,80,0,0.3)] hover:shadow-[0_0_50px_rgba(232,80,0,0.5)] transition-all text-center justify-center">
+            <div className="mt-5 sm:mt-8 flex flex-row items-center gap-2.5 sm:gap-4 flex-wrap">
+              <Button href="/contact" variant="primary" className="text-xs sm:text-base py-2.5 px-5 sm:py-3.5 sm:px-7 rounded-full shadow-[0_0_20px_rgba(232,80,0,0.3)] hover:shadow-[0_0_35px_rgba(232,80,0,0.5)] transition-all font-bold">
                 Initiate Protocol
               </Button>
-              <Button href="/services" variant="outline" className="text-base sm:text-lg py-3.5 sm:py-4 px-8 rounded-full border-white/20 hover:bg-white/5 text-center justify-center">
-                Explore Grid <ArrowRight className="ml-2 inline-block" size={18} />
+              <Button href="/services" variant="outline" className="text-xs sm:text-base py-2.5 px-4 sm:py-3.5 sm:px-6 rounded-full border-white/20 hover:bg-white/5 font-semibold">
+                Explore Grid <ArrowRight className="ml-1.5 inline-block" size={14} />
               </Button>
             </div>
 
-            {/* Mobile-Friendly Quick Highlights Deck (Visible on mobile/tablet, hidden on desktop) */}
-            <div className="mt-10 grid grid-cols-3 gap-2.5 sm:gap-4 lg:hidden">
-              <Link to="/services" className="glass-card p-3 sm:p-4 rounded-xl border border-brand-cyan/20 flex flex-col items-center text-center hover:border-brand-cyan/50 transition-all">
-                <Shield className="text-brand-cyan w-5 h-5 mb-1.5" />
-                <span className="text-xs font-bold text-white">Services</span>
-                <span className="text-[10px] text-gray-400 mt-0.5">6 Verticals</span>
+            {/* Compact Mobile Quick Highlights Deck */}
+            <div className="mt-6 grid grid-cols-3 gap-2 sm:gap-3 lg:hidden">
+              <Link to="/services" className="glass-card p-2.5 rounded-lg border border-brand-cyan/20 flex flex-col items-center text-center hover:border-brand-cyan/50 transition-all">
+                <Shield className="text-brand-cyan w-4 h-4 mb-1" />
+                <span className="text-[11px] font-bold text-white">Services</span>
+                <span className="text-[9px] text-gray-400">6 Verticals</span>
               </Link>
-              <Link to="/products" className="glass-card p-3 sm:p-4 rounded-xl border border-brand-purple/20 flex flex-col items-center text-center hover:border-brand-purple/50 transition-all">
-                <Zap className="text-brand-purple w-5 h-5 mb-1.5" />
-                <span className="text-xs font-bold text-white">Products</span>
-                <span className="text-[10px] text-gray-400 mt-0.5">4 Platforms</span>
+              <Link to="/products" className="glass-card p-2.5 rounded-lg border border-brand-purple/20 flex flex-col items-center text-center hover:border-brand-purple/50 transition-all">
+                <Zap className="text-brand-purple w-4 h-4 mb-1" />
+                <span className="text-[11px] font-bold text-white">Products</span>
+                <span className="text-[9px] text-gray-400">4 Platforms</span>
               </Link>
-              <Link to="/services/training" className="glass-card p-3 sm:p-4 rounded-xl border border-orange-500/20 flex flex-col items-center text-center hover:border-orange-500/50 transition-all">
-                <Lock className="text-orange-400 w-5 h-5 mb-1.5" />
-                <span className="text-xs font-bold text-white">Academy</span>
-                <span className="text-[10px] text-orange-400 font-semibold mt-0.5">Live Labs</span>
+              <Link to="/services/training" className="glass-card p-2.5 rounded-lg border border-orange-500/20 flex flex-col items-center text-center hover:border-orange-500/50 transition-all">
+                <Lock className="text-orange-400 w-4 h-4 mb-1" />
+                <span className="text-[11px] font-bold text-white">Academy</span>
+                <span className="text-[9px] text-orange-400 font-semibold">Live Labs</span>
               </Link>
             </div>
           </motion.div>
 
-          {/* Animated Desktop Cards — Services / Products / Courses */}
-          <div className="lg:col-span-5 hidden lg:flex flex-col gap-4 justify-center pt-10">
+          {/* Animated Desktop Cards */}
+          <div className="lg:col-span-5 hidden lg:flex flex-col gap-3.5 justify-center">
 
             {/* Services Card */}
             <motion.div
-              initial={{ opacity: 0, x: 40 }}
+              initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="glass-card rounded-2xl border border-brand-cyan/20 p-5 hover:border-brand-cyan/50 transition-all group"
+              transition={{ duration: 0.6, delay: 0.15 }}
+              className="glass-card rounded-xl border border-brand-cyan/20 p-4 hover:border-brand-cyan/50 transition-all group"
             >
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-8 h-8 rounded-lg bg-brand-cyan/10 flex items-center justify-center">
-                  <Shield className="text-brand-cyan" size={16} />
+              <div className="flex items-center gap-2.5 mb-2.5">
+                <div className="w-7 h-7 rounded-lg bg-brand-cyan/10 flex items-center justify-center">
+                  <Shield className="text-brand-cyan" size={14} />
                 </div>
-                <span className="text-xs font-mono text-brand-cyan/70 uppercase tracking-widest font-bold">Services</span>
+                <span className="text-[11px] font-mono text-brand-cyan/70 uppercase tracking-widest font-bold">Services</span>
               </div>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-1.5">
                 {['Red Teaming', 'Blue Teaming', 'GRC', 'IoT Security', 'OT Security', 'DevSecOps', 'Digital Forensics', 'Threat Intel'].map((s) => (
-                  <span key={s} className="text-xs px-2.5 py-1 rounded-full border border-white/10 text-gray-300 group-hover:border-brand-cyan/30 transition-colors">
+                  <span key={s} className="text-[11px] px-2 py-0.5 rounded-full border border-white/10 text-gray-300 group-hover:border-brand-cyan/30 transition-colors">
                     {s}
                   </span>
                 ))}
@@ -102,26 +102,26 @@ const HomePage: React.FC = () => {
 
             {/* Products Card */}
             <motion.div
-              initial={{ opacity: 0, x: 40 }}
+              initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7, delay: 0.35 }}
-              className="glass-card rounded-2xl border border-brand-purple/20 p-5 hover:border-brand-purple/50 transition-all group"
+              transition={{ duration: 0.6, delay: 0.25 }}
+              className="glass-card rounded-xl border border-brand-purple/20 p-4 hover:border-brand-purple/50 transition-all group"
             >
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-8 h-8 rounded-lg bg-brand-purple/10 flex items-center justify-center">
-                  <Zap className="text-brand-purple" size={16} />
+              <div className="flex items-center gap-2.5 mb-2.5">
+                <div className="w-7 h-7 rounded-lg bg-brand-purple/10 flex items-center justify-center">
+                  <Zap className="text-brand-purple" size={14} />
                 </div>
-                <span className="text-xs font-mono text-brand-purple/70 uppercase tracking-widest font-bold">Products</span>
+                <span className="text-[11px] font-mono text-brand-purple/70 uppercase tracking-widest font-bold">Products</span>
               </div>
-              <div className="space-y-2">
+              <div className="space-y-1.5">
                 {[
                   { name: 'Data Rakshak', tag: 'Data Privacy Platform' },
                   { name: 'BreachSimu', tag: 'Attack Simulation' },
                   { name: 'BountyLab & CTF', tag: 'Bug Bounty · 2026' },
                 ].map((p) => (
                   <div key={p.name} className="flex items-center justify-between">
-                    <span className="text-sm text-white font-medium">{p.name}</span>
-                    <span className="text-xs text-gray-400">{p.tag}</span>
+                    <span className="text-xs text-white font-medium">{p.name}</span>
+                    <span className="text-[10px] text-gray-400">{p.tag}</span>
                   </div>
                 ))}
               </div>
@@ -129,28 +129,28 @@ const HomePage: React.FC = () => {
 
             {/* Courses Card */}
             <motion.div
-              initial={{ opacity: 0, x: 40 }}
+              initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7, delay: 0.5 }}
-              className="glass-card rounded-2xl border border-orange-500/20 p-5 hover:border-orange-500/40 transition-all group"
+              transition={{ duration: 0.6, delay: 0.35 }}
+              className="glass-card rounded-xl border border-orange-500/20 p-4 hover:border-orange-500/40 transition-all group"
             >
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-8 h-8 rounded-lg bg-orange-500/10 flex items-center justify-center">
-                  <Lock className="text-orange-400" size={16} />
+              <div className="flex items-center gap-2.5 mb-2.5">
+                <div className="w-7 h-7 rounded-lg bg-orange-500/10 flex items-center justify-center">
+                  <Lock className="text-orange-400" size={14} />
                 </div>
-                <span className="text-xs font-mono text-orange-400/80 uppercase tracking-widest font-bold">Courses</span>
-                <span className="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 font-bold">Live</span>
+                <span className="text-[11px] font-mono text-orange-400/80 uppercase tracking-widest font-bold">Courses</span>
+                <span className="ml-auto text-[9px] px-1.5 py-0.2 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 font-bold">Live</span>
               </div>
-              <div className="space-y-2">
+              <div className="space-y-1.5">
                 {[
                   'Offensive Security Specialist',
                   'Certified SOC Analyst',
                   'Cyber Crime Investigation & DF',
                   'Cyber Product Development',
                 ].map((c) => (
-                  <div key={c} className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-orange-400/70" />
-                    <span className="text-xs text-gray-300">{c}</span>
+                  <div key={c} className="flex items-center gap-1.5">
+                    <div className="w-1 h-1 rounded-full bg-orange-400/70" />
+                    <span className="text-[11px] text-gray-300">{c}</span>
                   </div>
                 ))}
               </div>
@@ -162,35 +162,35 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Asymmetric Bento Box Services */}
-      <section className="py-16 sm:py-24 md:py-32 relative z-10 px-4 sm:px-8 md:px-12 lg:px-24 overflow-hidden">
-         <div className="mb-12 sm:mb-16 md:mb-20 relative">
-            <h2 className="text-4xl sm:text-6xl md:text-7xl lg:text-9xl font-display font-black text-white opacity-5 uppercase tracking-widest absolute -top-8 sm:-top-10 lg:-top-20 left-2 sm:left-4 lg:left-10 select-none pointer-events-none truncate max-w-full">
+      <section className="py-10 sm:py-16 md:py-24 relative z-10 px-4 sm:px-8 md:px-12 lg:px-24 overflow-hidden">
+         <div className="mb-6 sm:mb-12 relative">
+            <h2 className="hidden sm:block text-4xl sm:text-6xl md:text-7xl lg:text-9xl font-display font-black text-white opacity-5 uppercase tracking-widest absolute -top-8 sm:-top-10 lg:-top-20 left-2 sm:left-4 lg:left-10 select-none pointer-events-none truncate max-w-full">
               Capabilities
             </h2>
-            <h2 className="text-2xl sm:text-4xl md:text-5xl font-display font-bold text-white relative z-10 border-l-4 border-brand-cyan pl-4 sm:pl-6">Strategic Verticals</h2>
+            <h2 className="text-lg sm:text-2xl md:text-4xl font-display font-bold text-white relative z-10 border-l-3 border-brand-cyan pl-3 sm:pl-4">Strategic Verticals</h2>
          </div>
          
-         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 sm:gap-6 auto-rows-auto md:auto-rows-[320px]">
+         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3.5 sm:gap-5 auto-rows-auto md:auto-rows-[300px]">
             {/* Bento Item 1: Large Span */}
             <motion.div 
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="md:col-span-2 lg:col-span-2 md:row-span-2 glass-card rounded-2xl sm:rounded-3xl md:rounded-[3rem] p-6 sm:p-8 md:p-12 flex flex-col justify-between relative overflow-hidden group hover:border-brand-cyan/50 transition-all duration-500"
+              transition={{ duration: 0.5 }}
+              className="md:col-span-2 lg:col-span-2 md:row-span-2 glass-card rounded-xl sm:rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-8 flex flex-col justify-between relative overflow-hidden group hover:border-brand-cyan/50 transition-all duration-300"
             >
-               <div className="absolute top-0 right-0 p-8 sm:p-12 opacity-5 sm:opacity-10 group-hover:opacity-20 group-hover:scale-110 group-hover:rotate-12 transition-all duration-700 pointer-events-none">
-                 <Shield size={200} className="w-40 h-40 sm:w-60 sm:h-60" />
+               <div className="absolute top-0 right-0 p-4 sm:p-8 opacity-5 sm:opacity-10 group-hover:opacity-15 transition-all duration-500 pointer-events-none">
+                 <Shield className="w-28 h-28 sm:w-48 sm:h-48" />
                </div>
                <div className="relative z-10">
-                 <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-brand-cyan/20 flex items-center justify-center mb-6 sm:mb-8 border border-brand-cyan/30">
-                   <Shield className="text-brand-cyan w-6 h-6 sm:w-8 sm:h-8"/>
+                 <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-brand-cyan/20 flex items-center justify-center mb-3 sm:mb-5 border border-brand-cyan/30">
+                   <Shield className="text-brand-cyan w-5 h-5 sm:w-6 sm:h-6"/>
                  </div>
-                 <h3 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-white mb-4 sm:mb-6">Offensive Security Operations</h3>
-                 <p className="text-gray-300 text-sm sm:text-base md:text-lg max-w-md leading-relaxed">Military-grade red teaming and simulated adversarial engagements to expose critical vulnerabilities before they are exploited.</p>
+                 <h3 className="text-lg sm:text-2xl md:text-3xl font-display font-bold text-white mb-2 sm:mb-3">Offensive Security Operations</h3>
+                 <p className="text-gray-300 text-xs sm:text-sm md:text-base max-w-md leading-relaxed">Military-grade red teaming and simulated adversarial engagements to expose critical vulnerabilities before they are exploited.</p>
                </div>
-               <div className="relative z-10 mt-6 sm:mt-8">
-                 <Button href="/services/red-teaming" variant="outline" className="rounded-full px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base">
+               <div className="relative z-10 mt-4 sm:mt-6">
+                 <Button href="/services/red-teaming" variant="outline" className="rounded-full px-4 sm:px-6 py-1.5 sm:py-2.5 text-xs sm:text-sm">
                    Explore Protocol
                  </Button>
                </div>
@@ -198,77 +198,77 @@ const HomePage: React.FC = () => {
 
             {/* Bento Item 2 */}
             <motion.div 
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="glass-card rounded-2xl sm:rounded-3xl md:rounded-[3rem] p-6 sm:p-8 md:p-10 flex flex-col justify-between group hover:border-brand-purple/50 transition-all duration-500"
+              transition={{ duration: 0.5, delay: 0.05 }}
+              className="glass-card rounded-xl sm:rounded-2xl md:rounded-3xl p-4 sm:p-6 flex flex-col justify-between group hover:border-brand-purple/50 transition-all duration-300"
             >
-               <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-brand-purple/20 flex items-center justify-center mb-6">
-                 <Lock className="text-brand-purple w-5 h-5 sm:w-6 sm:h-6" />
+               <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-brand-purple/20 flex items-center justify-center mb-3 sm:mb-4">
+                 <Lock className="text-brand-purple w-4 h-4 sm:w-5 sm:h-5" />
                </div>
                <div>
-                 <h3 className="text-xl sm:text-2xl font-display font-bold text-white mb-2 sm:mb-3">Zero Trust Architecture</h3>
-                 <p className="text-gray-300 text-xs sm:text-sm">Assume breach. Authenticate everything continuously.</p>
+                 <h3 className="text-base sm:text-lg font-display font-bold text-white mb-1">Zero Trust Architecture</h3>
+                 <p className="text-gray-300 text-xs leading-relaxed">Assume breach. Authenticate everything continuously.</p>
                </div>
             </motion.div>
 
             {/* Bento Item 3 */}
             <motion.div 
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="glass-card rounded-2xl sm:rounded-3xl md:rounded-[3rem] p-6 sm:p-8 md:p-10 flex flex-col justify-between group hover:border-brand-cyan/50 transition-all duration-500"
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="glass-card rounded-xl sm:rounded-2xl md:rounded-3xl p-4 sm:p-6 flex flex-col justify-between group hover:border-brand-cyan/50 transition-all duration-300"
             >
-               <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-brand-cyan/20 flex items-center justify-center mb-6">
-                 <Zap className="text-brand-cyan w-5 h-5 sm:w-6 sm:h-6" />
+               <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-brand-cyan/20 flex items-center justify-center mb-3 sm:mb-4">
+                 <Zap className="text-brand-cyan w-4 h-4 sm:w-5 sm:h-5" />
                </div>
                <div>
-                 <h3 className="text-xl sm:text-2xl font-display font-bold text-white mb-2 sm:mb-3">Incident Response &amp; Forensics</h3>
-                 <p className="text-gray-300 text-xs sm:text-sm">Sub-second threat neutralization &amp; deep courtroom-ready forensics.</p>
+                 <h3 className="text-base sm:text-lg font-display font-bold text-white mb-1">Incident Response &amp; Forensics</h3>
+                 <p className="text-gray-300 text-xs leading-relaxed">Sub-second threat neutralization &amp; courtroom-ready forensics.</p>
                </div>
             </motion.div>
             
             {/* Bento Item 4: Wide Span */}
             <motion.div 
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="md:col-span-2 lg:col-span-2 glass-card rounded-2xl sm:rounded-3xl md:rounded-[3rem] p-6 sm:p-8 md:p-10 flex flex-col sm:flex-row items-start sm:items-center justify-between group overflow-hidden relative border-brand-purple/30 hover:border-brand-purple/60 transition-all duration-500 gap-6"
+              transition={{ duration: 0.5, delay: 0.15 }}
+              className="md:col-span-2 lg:col-span-2 glass-card rounded-xl sm:rounded-2xl md:rounded-3xl p-4 sm:p-6 flex flex-row items-center justify-between group overflow-hidden relative border-brand-purple/30 hover:border-brand-purple/60 transition-all duration-300 gap-4"
             >
                <div className="absolute inset-0 bg-gradient-to-r from-brand-purple/10 to-transparent pointer-events-none"></div>
                <div className="relative z-10 max-w-sm">
-                 <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-brand-purple/20 flex items-center justify-center mb-4 sm:mb-6 border border-brand-purple/30">
-                   <Server className="text-brand-purple w-5 h-5 sm:w-6 sm:h-6"/>
+                 <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-brand-purple/20 flex items-center justify-center mb-2.5 border border-brand-purple/30">
+                   <Server className="text-brand-purple w-4 h-4 sm:w-5 sm:h-5"/>
                  </div>
-                 <h3 className="text-2xl sm:text-3xl font-display font-bold text-white mb-2 sm:mb-3">Cyber Product Dev</h3>
-                 <p className="text-gray-300 text-sm sm:text-base">Secure by design engineering protocols for next-gen products.</p>
+                 <h3 className="text-base sm:text-xl font-display font-bold text-white mb-1">Cyber Product Dev</h3>
+                 <p className="text-gray-300 text-xs sm:text-sm">Secure by design engineering protocols for next-gen products.</p>
                </div>
-               <Server className="text-white/5 w-24 h-24 sm:w-36 sm:h-36 relative z-10 group-hover:scale-110 transition-transform duration-700 shrink-0 self-end sm:self-center" />
+               <Server className="text-white/5 w-16 h-16 sm:w-28 sm:h-28 relative z-10 group-hover:scale-105 transition-transform duration-500 shrink-0" />
             </motion.div>
          </div>
       </section>
 
       {/* Abstract Stats Section */}
-      <section className="py-16 sm:py-24 md:py-32 relative z-10 overflow-hidden bg-black/40 backdrop-blur-md border-y border-white/5">
+      <section className="py-8 sm:py-14 md:py-20 relative z-10 overflow-hidden bg-black/40 backdrop-blur-md border-y border-white/5">
         <div className="container mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 lg:gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             {STATS.map((stat, i) => (
               <motion.div
                 key={stat.label}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="border-l-2 border-brand-cyan/30 pl-4 sm:pl-6 md:pl-8 py-2 sm:py-4 relative group"
+                transition={{ duration: 0.4, delay: i * 0.08 }}
+                className="border-l-2 border-brand-cyan/30 pl-3 sm:pl-5 py-1 sm:py-2 relative group"
               >
-                <div className="absolute left-[-2px] top-0 h-0 w-[2px] bg-brand-cyan group-hover:h-full transition-all duration-500"></div>
-                <h3 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-black text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400 mb-2 sm:mb-4">
+                <div className="absolute left-[-2px] top-0 h-0 w-[2px] bg-brand-cyan group-hover:h-full transition-all duration-300"></div>
+                <h3 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-black text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400 mb-1">
                   <AnimatedCounter to={stat.value} prefix={stat.prefix} suffix={stat.suffix} />
                 </h3>
-                <p className="text-brand-cyan font-mono uppercase tracking-wider sm:tracking-[0.2em] text-[11px] sm:text-xs md:text-sm font-bold">{stat.label}</p>
+                <p className="text-brand-cyan font-mono uppercase tracking-wider text-[10px] sm:text-xs font-bold">{stat.label}</p>
               </motion.div>
             ))}
           </div>

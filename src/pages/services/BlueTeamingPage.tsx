@@ -27,13 +27,13 @@ const BlueTeamingPage: React.FC = () => {
         <meta name="description" content="Strengthen your defenses with Roblocksec's Blue Teaming services, including 24/7 SOC monitoring, threat hunting, EDR/XDR management, and incident response." />
       </Helmet>
       <PageHero title={service.title} subtitle={service.description} />
-      <div className="py-20 container mx-auto px-6">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl font-display font-bold text-white light:text-light-text mb-4">Our Defensive Capabilities</h2>
-            <p className="text-gray-300 light:text-gray-600 text-lg">Our Blue Team provides a multi-layered defense-in-depth strategy, combining cutting-edge technology, proactive threat intelligence, and expert analysis to protect your organization around the clock.</p>
+      <div className="py-8 sm:py-16 md:py-20 container mx-auto px-3 sm:px-6">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-16">
+            <h2 className="text-xl sm:text-3xl font-display font-bold text-white light:text-light-text mb-2 sm:mb-4">Our Defensive Capabilities</h2>
+            <p className="text-gray-300 light:text-gray-600 text-xs sm:text-base leading-relaxed">Our Blue Team provides a multi-layered defense-in-depth strategy, combining cutting-edge technology, proactive threat intelligence, and expert analysis to protect your organization around the clock.</p>
         </div>
         <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -45,11 +45,11 @@ const BlueTeamingPage: React.FC = () => {
               variants={itemVariants}
               className="h-full"
             >
-              <div className="card-bg p-8 rounded-lg glowing-border h-full flex flex-col text-center items-center">
-                <sub.icon className="w-16 h-16 text-brand-cyan light:text-brand-blue mb-4" />
-                <h3 className="text-xl font-bold font-display text-white light:text-light-text mb-2">{sub.name}</h3>
+              <div className="card-bg p-4 sm:p-6 rounded-xl glowing-border h-full flex flex-col text-center items-center">
+                <sub.icon className="w-10 h-10 sm:w-14 sm:h-14 text-brand-cyan light:text-brand-blue mb-3 sm:mb-4" />
+                <h3 className="text-base sm:text-lg font-bold font-display text-white light:text-light-text mb-2">{sub.name}</h3>
                 <div className="flex-grow"></div>
-                <Button href={`/services/${service.slug}/${sub.slug}`} variant="outline" className="mt-6">
+                <Button href={`/services/${service.slug}/${sub.slug}`} variant="outline" className="mt-4 text-xs sm:text-sm py-2 px-4">
                   Learn More
                 </Button>
               </div>

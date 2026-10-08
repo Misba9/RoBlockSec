@@ -42,17 +42,17 @@ const Header: React.FC = () => {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         isScrolled || isOpen
-          ? 'header-bg border-b border-brand-cyan/15 shadow-[0_4px_32px_rgba(0,0,0,0.6)]'
+          ? 'header-bg border-b border-brand-cyan/15 shadow-[0_4px_24px_rgba(0,0,0,0.7)]'
           : 'bg-gradient-to-b from-brand-dark/90 via-brand-dark/60 to-transparent border-b border-transparent',
       )}
     >
-      <nav className="container mx-auto px-4 sm:px-6 py-3.5 sm:py-4 flex justify-between items-center">
+      <nav className="container mx-auto px-3 sm:px-6 py-2.5 sm:py-3.5 flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="flex items-center group relative z-10">
           <img 
             src="/RoBlockSec-01.png" 
             alt="RoBlockSec Logo" 
-            className="h-8 sm:h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
+            className="h-7 sm:h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
           />
         </Link>
 
@@ -69,7 +69,7 @@ const Header: React.FC = () => {
                 <Link
                   to="/services"
                   className={cn(
-                    'flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-semibold tracking-wide transition-all duration-200',
+                    'flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs md:text-sm font-semibold tracking-wide transition-all duration-200',
                     location.pathname.startsWith('/services')
                       ? 'text-brand-cyan bg-brand-cyan/10'
                       : 'text-gray-300 hover:text-brand-cyan hover:bg-brand-cyan/5',
@@ -77,7 +77,7 @@ const Header: React.FC = () => {
                 >
                   Services
                   <ChevronDown
-                    size={14}
+                    size={13}
                     className={cn('transition-transform duration-200', servicesOpen && 'rotate-180')}
                   />
                 </Link>
@@ -119,7 +119,7 @@ const Header: React.FC = () => {
                 to={link.href}
                 className={({ isActive }) =>
                   cn(
-                    'px-4 py-2 rounded-lg text-sm font-semibold tracking-wide transition-all duration-200',
+                    'px-3.5 py-1.5 rounded-lg text-xs md:text-sm font-semibold tracking-wide transition-all duration-200',
                     isActive
                       ? 'text-brand-cyan bg-brand-cyan/10 shadow-[0_0_15px_rgba(232,80,0,0.15)]'
                       : 'text-gray-300 hover:text-brand-cyan hover:bg-brand-cyan/5',
@@ -133,23 +133,23 @@ const Header: React.FC = () => {
         </div>
 
         {/* CTA (Desktop) */}
-        <div className="hidden md:flex items-center gap-3">
-          <Button href="/careers" variant="ghost" className="text-sm py-2 px-4">
+        <div className="hidden md:flex items-center gap-2.5">
+          <Button href="/careers" variant="ghost" className="text-xs md:text-sm py-1.5 px-3.5">
             Careers
           </Button>
-          <Button href="/contact" variant="primary" className="text-sm py-2 px-5">
+          <Button href="/contact" variant="primary" className="text-xs md:text-sm py-1.5 px-4">
             Get a Quote
           </Button>
         </div>
 
         {/* Mobile Hamburger Toggle */}
         <button
-          className="md:hidden text-gray-200 hover:text-brand-cyan p-2.5 rounded-xl border border-white/10 bg-white/5 active:scale-95 transition-all flex items-center justify-center"
+          className="md:hidden text-gray-200 hover:text-brand-cyan p-2 rounded-lg border border-white/10 bg-white/5 active:scale-95 transition-all flex items-center justify-center"
           onClick={() => setIsOpen(!isOpen)}
           aria-label={isOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={isOpen}
         >
-          {isOpen ? <X size={22} className="text-brand-cyan" /> : <Menu size={22} />}
+          {isOpen ? <X size={20} className="text-brand-cyan" /> : <Menu size={20} />}
         </button>
       </nav>
 
@@ -160,17 +160,17 @@ const Header: React.FC = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
             className="md:hidden overflow-hidden header-bg border-b border-brand-cyan/20 shadow-[0_16px_40px_rgba(0,0,0,0.9)]"
           >
-            <div className="px-4 py-5 flex flex-col gap-1.5 max-h-[calc(100vh-70px)] overflow-y-auto no-scrollbar">
+            <div className="px-3 py-3.5 flex flex-col gap-1 max-h-[calc(100vh-60px)] overflow-y-auto no-scrollbar">
               {/* Home */}
               <NavLink
                 to="/"
                 onClick={() => setIsOpen(false)}
                 className={({ isActive }) =>
                   cn(
-                    'px-4 py-3 rounded-xl text-base font-semibold transition-all flex items-center justify-between',
+                    'px-3 py-2 rounded-lg text-sm font-semibold transition-all flex items-center justify-between',
                     isActive
                       ? 'text-brand-cyan bg-brand-cyan/10 border border-brand-cyan/20'
                       : 'text-gray-200 hover:text-brand-cyan hover:bg-white/5',
@@ -178,7 +178,7 @@ const Header: React.FC = () => {
                 }
               >
                 <span>Home</span>
-                <ChevronRight size={16} className="opacity-40" />
+                <ChevronRight size={14} className="opacity-40" />
               </NavLink>
 
               {/* About */}
@@ -187,7 +187,7 @@ const Header: React.FC = () => {
                 onClick={() => setIsOpen(false)}
                 className={({ isActive }) =>
                   cn(
-                    'px-4 py-3 rounded-xl text-base font-semibold transition-all flex items-center justify-between',
+                    'px-3 py-2 rounded-lg text-sm font-semibold transition-all flex items-center justify-between',
                     isActive
                       ? 'text-brand-cyan bg-brand-cyan/10 border border-brand-cyan/20'
                       : 'text-gray-200 hover:text-brand-cyan hover:bg-white/5',
@@ -195,17 +195,17 @@ const Header: React.FC = () => {
                 }
               >
                 <span>About</span>
-                <ChevronRight size={16} className="opacity-40" />
+                <ChevronRight size={14} className="opacity-40" />
               </NavLink>
 
               {/* Collapsible Services Accordion on Mobile */}
-              <div className="rounded-xl border border-white/5 bg-white/[0.02] overflow-hidden">
-                <div className="flex items-center justify-between px-4 py-3">
+              <div className="rounded-lg border border-white/5 bg-white/[0.02] overflow-hidden">
+                <div className="flex items-center justify-between px-3 py-2">
                   <Link
                     to="/services"
                     onClick={() => setIsOpen(false)}
                     className={cn(
-                      'text-base font-semibold transition-colors flex-1',
+                      'text-sm font-semibold transition-colors flex-1',
                       location.pathname.startsWith('/services') ? 'text-brand-cyan' : 'text-gray-200 hover:text-brand-cyan'
                     )}
                   >
@@ -213,11 +213,11 @@ const Header: React.FC = () => {
                   </Link>
                   <button
                     onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                    className="p-1.5 rounded-lg text-gray-400 hover:text-brand-cyan hover:bg-white/5 transition-colors"
+                    className="p-1 rounded-md text-gray-400 hover:text-brand-cyan hover:bg-white/5 transition-colors"
                     aria-label="Toggle Services list"
                   >
                     <ChevronDown
-                      size={18}
+                      size={15}
                       className={cn('transition-transform duration-200 text-brand-cyan', mobileServicesOpen && 'rotate-180')}
                     />
                   </button>
@@ -229,17 +229,17 @@ const Header: React.FC = () => {
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: 'auto' }}
                       exit={{ opacity: 0, height: 0 }}
-                      transition={{ duration: 0.2 }}
-                      className="px-3 pb-3 pt-1 flex flex-col gap-1 border-t border-white/5"
+                      transition={{ duration: 0.18 }}
+                      className="px-2 pb-2 pt-0.5 flex flex-col gap-0.5 border-t border-white/5"
                     >
                       {ALL_SERVICES.map((svc) => (
                         <Link
                           key={svc.slug}
                           to={`/services/${svc.slug}`}
                           onClick={() => setIsOpen(false)}
-                          className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-gray-300 hover:text-brand-cyan hover:bg-brand-cyan/10 transition-colors"
+                          className="flex items-center gap-2 px-2.5 py-1.5 rounded-md text-xs text-gray-300 hover:text-brand-cyan hover:bg-brand-cyan/10 transition-colors"
                         >
-                          <svc.icon size={16} className="text-brand-cyan/80 shrink-0" />
+                          <svc.icon size={13} className="text-brand-cyan/80 shrink-0" />
                           <span className="truncate">{svc.title}</span>
                         </Link>
                       ))}
@@ -254,7 +254,7 @@ const Header: React.FC = () => {
                 onClick={() => setIsOpen(false)}
                 className={({ isActive }) =>
                   cn(
-                    'px-4 py-3 rounded-xl text-base font-semibold transition-all flex items-center justify-between',
+                    'px-3 py-2 rounded-lg text-sm font-semibold transition-all flex items-center justify-between',
                     isActive
                       ? 'text-brand-cyan bg-brand-cyan/10 border border-brand-cyan/20'
                       : 'text-gray-200 hover:text-brand-cyan hover:bg-white/5',
@@ -262,7 +262,7 @@ const Header: React.FC = () => {
                 }
               >
                 <span>Products</span>
-                <ChevronRight size={16} className="opacity-40" />
+                <ChevronRight size={14} className="opacity-40" />
               </NavLink>
 
               {/* Insights */}
@@ -271,15 +271,15 @@ const Header: React.FC = () => {
                 onClick={() => setIsOpen(false)}
                 className={({ isActive }) =>
                   cn(
-                    'px-4 py-3 rounded-xl text-base font-semibold transition-all flex items-center justify-between',
+                    'px-3 py-2 rounded-lg text-sm font-semibold transition-all flex items-center justify-between',
                     isActive
                       ? 'text-brand-cyan bg-brand-cyan/10 border border-brand-cyan/20'
                       : 'text-gray-200 hover:text-brand-cyan hover:bg-white/5',
                   )
                 }
               >
-                <span>Insights & Research</span>
-                <ChevronRight size={16} className="opacity-40" />
+                <span>Insights &amp; Research</span>
+                <ChevronRight size={14} className="opacity-40" />
               </NavLink>
 
               {/* Team */}
@@ -288,7 +288,7 @@ const Header: React.FC = () => {
                 onClick={() => setIsOpen(false)}
                 className={({ isActive }) =>
                   cn(
-                    'px-4 py-3 rounded-xl text-base font-semibold transition-all flex items-center justify-between',
+                    'px-3 py-2 rounded-lg text-sm font-semibold transition-all flex items-center justify-between',
                     isActive
                       ? 'text-brand-cyan bg-brand-cyan/10 border border-brand-cyan/20'
                       : 'text-gray-200 hover:text-brand-cyan hover:bg-white/5',
@@ -296,7 +296,7 @@ const Header: React.FC = () => {
                 }
               >
                 <span>Team</span>
-                <ChevronRight size={16} className="opacity-40" />
+                <ChevronRight size={14} className="opacity-40" />
               </NavLink>
 
               {/* Careers */}
@@ -305,7 +305,7 @@ const Header: React.FC = () => {
                 onClick={() => setIsOpen(false)}
                 className={({ isActive }) =>
                   cn(
-                    'px-4 py-3 rounded-xl text-base font-semibold transition-all flex items-center justify-between',
+                    'px-3 py-2 rounded-lg text-sm font-semibold transition-all flex items-center justify-between',
                     isActive
                       ? 'text-brand-cyan bg-brand-cyan/10 border border-brand-cyan/20'
                       : 'text-gray-200 hover:text-brand-cyan hover:bg-white/5',
@@ -313,15 +313,15 @@ const Header: React.FC = () => {
                 }
               >
                 <span>Careers</span>
-                <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded-full bg-brand-purple/20 text-brand-purple border border-brand-purple/30">Hiring</span>
+                <span className="text-[9px] font-mono uppercase px-1.5 py-0.2 rounded-full bg-brand-purple/20 text-brand-purple border border-brand-purple/30 font-bold">Hiring</span>
               </NavLink>
 
               {/* Action Buttons in Mobile Drawer */}
-              <div className="pt-4 mt-2 border-t border-white/10 flex flex-col gap-3">
+              <div className="pt-2.5 mt-1 border-t border-white/10 flex flex-col gap-2">
                 <Button 
                   href="/contact" 
                   variant="primary" 
-                  className="w-full text-center justify-center py-3.5 text-base font-bold shadow-[0_0_20px_rgba(232,80,0,0.3)]" 
+                  className="w-full text-center justify-center py-2.5 text-xs sm:text-sm font-bold shadow-[0_0_15px_rgba(232,80,0,0.3)]" 
                   onClick={() => setIsOpen(false)}
                 >
                   Get a Quote / Contact

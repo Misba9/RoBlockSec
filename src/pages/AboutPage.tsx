@@ -27,56 +27,56 @@ const AboutPage: React.FC = () => {
         subtitle="At Roblocksec, we protect digital ecosystems with intelligence, innovation, and integrity."
       />
 
-      <section className="py-16 sm:py-20">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
+      <section className="py-8 sm:py-16 md:py-20">
+        <div className="container mx-auto px-3 sm:px-6">
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-12 items-center">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-              <h2 className="text-2xl sm:text-3xl font-display font-bold text-white mb-3 sm:mb-4">Our Mission &amp; Vision</h2>
-              <p className="text-brand-cyan font-semibold text-base sm:text-lg mb-3 sm:mb-4">To make digital security accessible, automated, and adaptive.</p>
-              <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+              <h2 className="text-xl sm:text-3xl font-display font-bold text-white mb-2 sm:mb-4">Our Mission &amp; Vision</h2>
+              <p className="text-brand-cyan font-semibold text-sm sm:text-lg mb-2 sm:mb-4">To make digital security accessible, automated, and adaptive.</p>
+              <p className="text-gray-300 text-xs sm:text-base leading-relaxed">
                 Founded by a team of elite cybersecurity veterans, Roblocksec was born from a shared passion for solving complex security challenges. We saw a world becoming increasingly interconnected, yet dangerously vulnerable. Our mission is to provide proactive, intelligence-driven security solutions that empower organizations to innovate fearlessly and operate with confidence in the digital age. We envision a future where robust security is not a barrier, but an enabler of progress.
               </p>
             </motion.div>
             <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-              <img src="/cyber-lab.jpg" alt="Roblocksec Cyber Lab" className="rounded-2xl shadow-2xl shadow-brand-cyan/20 border border-white/10 object-cover w-full h-[260px] sm:h-[380px]" />
+              <img src="/cyber-lab.jpg" alt="Roblocksec Cyber Lab" className="rounded-xl sm:rounded-2xl shadow-xl shadow-brand-cyan/20 border border-white/10 object-cover w-full h-[180px] sm:h-[320px] md:h-[380px]" />
             </motion.div>
           </div>
         </div>
       </section>
 
-      <section className="py-16 sm:py-20 bg-brand-navy/50">
-        <div className="container mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-2xl sm:text-3xl font-display font-bold text-white mb-8 sm:mb-12">Our Core Values</h2>
+      <section className="py-8 sm:py-16 md:py-20 bg-brand-navy/50">
+        <div className="container mx-auto px-3 sm:px-6 text-center">
+          <h2 className="text-xl sm:text-3xl font-display font-bold text-white mb-6 sm:mb-12">Our Core Values</h2>
           <motion.div 
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
+            className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6"
           >
             {CORE_VALUES.map(value => (
-              <motion.div key={value.title} variants={itemVariants} className="bg-brand-navy p-6 rounded-2xl glowing-border flex flex-col items-center text-center">
-                <value.icon className="w-10 h-10 sm:w-12 sm:h-12 text-brand-cyan mb-3 sm:mb-4" />
-                <h3 className="text-lg sm:text-xl font-bold text-white font-display">{value.title}</h3>
-                <p className="text-gray-300 mt-2 text-xs sm:text-sm leading-relaxed">{value.description}</p>
+              <motion.div key={value.title} variants={itemVariants} className="bg-brand-navy p-3.5 sm:p-6 rounded-xl sm:rounded-2xl glowing-border flex flex-col items-center text-center">
+                <value.icon className="w-7 h-7 sm:w-12 sm:h-12 text-brand-cyan mb-2 sm:mb-4" />
+                <h3 className="text-sm sm:text-xl font-bold text-white font-display">{value.title}</h3>
+                <p className="text-gray-300 mt-1 sm:mt-2 text-[11px] sm:text-sm leading-relaxed">{value.description}</p>
               </motion.div>
             ))}
           </motion.div>
         </div>
       </section>
 
-      <section className="py-16 sm:py-20">
-        <div className="container mx-auto px-4 sm:px-6">
-          <h2 className="text-2xl sm:text-3xl font-display font-bold text-white text-center mb-12 sm:mb-16">Our Journey</h2>
+      <section className="py-8 sm:py-16 md:py-20">
+        <div className="container mx-auto px-3 sm:px-6">
+          <h2 className="text-xl sm:text-3xl font-display font-bold text-white text-center mb-8 sm:mb-16">Our Journey</h2>
           <div className="relative max-w-4xl mx-auto">
             {/* Desktop Center Timeline line */}
             <div className="hidden md:block absolute left-1/2 top-0 h-full w-0.5 bg-brand-cyan/30 -translate-x-1/2"></div>
             
             {/* Mobile Left Timeline line */}
-            <div className="md:hidden absolute left-5 top-0 h-full w-0.5 bg-brand-cyan/30"></div>
+            <div className="md:hidden absolute left-4 top-0 h-full w-0.5 bg-brand-cyan/30"></div>
 
             {TIMELINE_MILESTONES.map((item, index) => (
-              <div key={item.year} className="relative mb-10 sm:mb-16 last:mb-0">
+              <div key={item.year} className="relative mb-6 sm:mb-16 last:mb-0">
                 {/* Desktop alternating layout */}
                 <div className="hidden md:flex items-center min-h-[100px]">
                   {index % 2 === 0 ? (
@@ -133,22 +133,22 @@ const AboutPage: React.FC = () => {
                 </div>
                 
                 {/* Mobile clean left-aligned timeline card layout */}
-                <div className="md:hidden flex items-start gap-4 pl-2">
-                  <div className="z-10 flex-shrink-0 flex items-center justify-center w-14 h-9 rounded-lg bg-brand-cyan shadow-md shadow-brand-cyan/30 mt-1">
-                    <p className="text-brand-dark font-bold font-mono text-xs">{item.year}</p>
+                <div className="md:hidden flex items-start gap-3 pl-1">
+                  <div className="z-10 flex-shrink-0 flex items-center justify-center w-12 h-7 rounded-md bg-brand-cyan shadow-md shadow-brand-cyan/30 mt-0.5">
+                    <p className="text-brand-dark font-bold font-mono text-[10px]">{item.year}</p>
                   </div>
                   <motion.div 
                     initial={{ opacity: 0, y: 15 }} 
                     whileInView={{ opacity: 1, y: 0 }} 
                     viewport={{ once: true }} 
                     transition={{ duration: 0.4 }}
-                    className="glass-card p-4 rounded-xl border border-white/10 flex-1"
+                    className="glass-card p-3 rounded-lg border border-white/10 flex-1"
                   >
-                    <p className="text-sm font-bold font-display text-white">
+                    <p className="text-xs font-bold font-display text-white">
                       {item.event}
                     </p>
                     {item.link && (
-                      <a href={item.link} target="_blank" rel="noopener noreferrer" className="inline-block mt-2 text-brand-cyan hover:underline text-xs font-semibold">
+                      <a href={item.link} target="_blank" rel="noopener noreferrer" className="inline-block mt-1 text-brand-cyan hover:underline text-[11px] font-semibold">
                         View Project &rarr;
                       </a>
                     )}

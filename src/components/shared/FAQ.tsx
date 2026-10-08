@@ -33,21 +33,21 @@ const FAQ: React.FC<FAQProps> = ({ items }) => {
   };
 
   return (
-    <section className="py-20 page-bg">
+    <section className="py-8 sm:py-16 md:py-20 page-bg">
       <Helmet>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
-      <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-display font-bold text-white light:text-light-text text-center mb-12">Frequently Asked Questions</h2>
-        <div className="max-w-4xl mx-auto space-y-4">
+      <div className="container mx-auto px-3 sm:px-6">
+        <h2 className="text-xl sm:text-3xl font-display font-bold text-white light:text-light-text text-center mb-6 sm:mb-12">Frequently Asked Questions</h2>
+        <div className="max-w-4xl mx-auto space-y-3 sm:space-y-4">
           {items.map((item, index) => (
-            <div key={index} className="glowing-border card-bg rounded-lg overflow-hidden">
+            <div key={index} className="glowing-border card-bg rounded-xl overflow-hidden">
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full p-6 text-left flex justify-between items-center"
+                className="w-full p-4 sm:p-6 text-left flex justify-between items-center"
               >
-                <h3 className="text-lg font-semibold text-white light:text-light-text">{item.q}</h3>
-                {activeIndex === index ? <ChevronUp className="text-brand-cyan light:text-brand-blue" /> : <ChevronDown className="text-brand-cyan light:text-brand-blue" />}
+                <h3 className="text-sm sm:text-lg font-semibold text-white light:text-light-text pr-3">{item.q}</h3>
+                {activeIndex === index ? <ChevronUp className="text-brand-cyan light:text-brand-blue shrink-0" size={18} /> : <ChevronDown className="text-brand-cyan light:text-brand-blue shrink-0" size={18} />}
               </button>
               <AnimatePresence>
                 {activeIndex === index && (
@@ -58,7 +58,7 @@ const FAQ: React.FC<FAQProps> = ({ items }) => {
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden"
                   >
-                    <div className="px-6 pb-6 text-gray-300 light:text-gray-600">
+                    <div className="px-4 pb-4 sm:px-6 sm:pb-6 text-gray-300 light:text-gray-600 text-xs sm:text-sm leading-relaxed">
                       <p>{item.a}</p>
                     </div>
                   </motion.div>

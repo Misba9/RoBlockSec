@@ -20,12 +20,12 @@ const TermsPage: React.FC = () => {
         subtitle="Standard Terms of Service and Authorized Engagement Protocols." 
       />
 
-      <div className="container mx-auto px-6 py-20 max-w-5xl">
+      <div className="container mx-auto px-3 sm:px-6 py-8 sm:py-16 md:py-20 max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="glass-card p-8 md:p-12 rounded-[2.5rem] border border-white/5 space-y-10"
+          className="glass-card p-4 sm:p-8 md:p-12 rounded-xl sm:rounded-2xl md:rounded-[2.5rem] border border-white/5 space-y-6 sm:space-y-10 text-xs sm:text-base"
         >
           <div>
             <h2 className="text-2xl font-display font-bold text-white mb-3">1. Agreement to Terms</h2>

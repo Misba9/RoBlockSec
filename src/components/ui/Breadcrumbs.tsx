@@ -19,10 +19,10 @@ const Breadcrumbs: React.FC = () => {
   };
 
   return (
-    <div className="pt-[58px] sm:pt-[70px] bg-brand-dark">
-      <nav aria-label="Breadcrumb" className="bg-brand-navy/50 py-2 sm:py-2.5 relative z-30 border-b border-white/5">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-12">
-          <ol className="flex items-center space-x-1.5 sm:space-x-2 text-xs sm:text-sm font-body overflow-x-auto whitespace-nowrap no-scrollbar py-0.5">
+    <div className="pt-[46px] sm:pt-[60px] bg-brand-dark">
+      <nav aria-label="Breadcrumb" className="bg-brand-navy/50 py-1.5 sm:py-2 relative z-30 border-b border-white/5">
+        <div className="container mx-auto px-3 sm:px-6 lg:px-12">
+          <ol className="flex items-center space-x-1.5 text-[11px] sm:text-xs font-body overflow-x-auto whitespace-nowrap no-scrollbar py-0.5">
             <li className="shrink-0">
               <Link to="/" className="text-gray-400 hover:text-brand-cyan transition-colors">
                 Home

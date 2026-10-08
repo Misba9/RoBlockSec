@@ -17,16 +17,16 @@ const ContactPage: React.FC = () => {
         title="Contact Us"
         subtitle="Let’s Secure Your Organization. Get in Touch Now."
       />
-      <div className="py-16 sm:py-20">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-start">
+      <div className="py-8 sm:py-16 md:py-20">
+        <div className="container mx-auto px-3 sm:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-10 lg:gap-16 items-start">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-2xl sm:text-3xl font-display font-bold text-white mb-6 border-l-4 border-brand-cyan pl-4">Send Us a Message</h2>
+              <h2 className="text-xl sm:text-2xl font-display font-bold text-white mb-4 sm:mb-6 border-l-4 border-brand-cyan pl-3">Send Us a Message</h2>
               <ContactForm />
             </motion.div>
             
@@ -35,35 +35,35 @@ const ContactPage: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.15 }}
-              className="space-y-6 sm:space-y-8"
+              className="space-y-4 sm:space-y-6"
             >
-              <h2 className="text-2xl sm:text-3xl font-display font-bold text-white mb-6 border-l-4 border-brand-purple pl-4">Contact Information</h2>
+              <h2 className="text-xl sm:text-2xl font-display font-bold text-white mb-4 sm:mb-6 border-l-4 border-brand-purple pl-3">Contact Information</h2>
               
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div className="p-4 rounded-2xl bg-white/5 border border-white/10 flex items-start gap-3.5 hover:border-brand-cyan/30 transition-all">
-                  <Mail className="w-5 h-5 text-brand-cyan mt-1 shrink-0" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                <div className="p-3 sm:p-4 rounded-xl bg-white/5 border border-white/10 flex items-start gap-3 hover:border-brand-cyan/30 transition-all">
+                  <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-brand-cyan mt-0.5 shrink-0" />
                   <div>
-                    <h3 className="text-sm font-bold text-white font-display">Email Us</h3>
+                    <h3 className="text-xs sm:text-sm font-bold text-white font-display">Email Us</h3>
                     <a href="mailto:info@roblocksec.com" className="text-gray-300 text-xs sm:text-sm hover:text-brand-cyan transition block mt-0.5">info@roblocksec.com</a>
                   </div>
                 </div>
 
-                <div className="p-4 rounded-2xl bg-white/5 border border-white/10 flex items-start gap-3.5 hover:border-brand-cyan/30 transition-all">
-                  <Phone className="w-5 h-5 text-brand-cyan mt-1 shrink-0" />
+                <div className="p-3 sm:p-4 rounded-xl bg-white/5 border border-white/10 flex items-start gap-3 hover:border-brand-cyan/30 transition-all">
+                  <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-brand-cyan mt-0.5 shrink-0" />
                   <div>
-                    <h3 className="text-sm font-bold text-white font-display">Direct Phone</h3>
+                    <h3 className="text-xs sm:text-sm font-bold text-white font-display">Direct Phone</h3>
                     <a href="tel:+919347012418" className="text-gray-300 text-xs sm:text-sm hover:text-brand-cyan transition block mt-0.5">+91 93470 12418</a>
                   </div>
                 </div>
               </div>
 
               {/* Hyderabad Office */}
-              <div className="p-4 sm:p-5 rounded-2xl bg-white/5 border border-white/10 flex items-start gap-4 hover:border-brand-cyan/30 transition-all">
-                <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-brand-cyan mt-1 shrink-0" />
+              <div className="p-3.5 sm:p-5 rounded-xl sm:rounded-2xl bg-white/5 border border-white/10 flex items-start gap-3 sm:gap-4 hover:border-brand-cyan/30 transition-all">
+                <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-brand-cyan mt-0.5 shrink-0" />
                 <div>
                   <div className="flex flex-wrap items-center gap-2 mb-1">
-                    <h3 className="text-sm sm:text-base font-bold text-white font-display">Hyderabad Office</h3>
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-brand-cyan/10 text-brand-cyan border border-brand-cyan/20 font-semibold">Headquarters</span>
+                    <h3 className="text-xs sm:text-base font-bold text-white font-display">Hyderabad Office</h3>
+                    <span className="text-[9px] sm:text-[10px] font-mono px-1.5 py-0.5 rounded bg-brand-cyan/10 text-brand-cyan border border-brand-cyan/20 font-semibold">Headquarters</span>
                   </div>
                   <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">
                     103, Image Hospitals Ln, Pratap Nagar, Ameerpet, Nagarjuna Nagar colony, Yella Reddy Guda, Hyderabad, Telangana 500073
@@ -72,12 +72,12 @@ const ContactPage: React.FC = () => {
               </div>
 
               {/* Puducherry Office */}
-              <div className="p-4 sm:p-5 rounded-2xl bg-white/5 border border-white/10 flex items-start gap-4 hover:border-brand-purple/30 transition-all">
-                <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-brand-purple mt-1 shrink-0" />
+              <div className="p-3.5 sm:p-5 rounded-xl sm:rounded-2xl bg-white/5 border border-white/10 flex items-start gap-3 sm:gap-4 hover:border-brand-purple/30 transition-all">
+                <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-brand-purple mt-0.5 shrink-0" />
                 <div>
                   <div className="flex flex-wrap items-center gap-2 mb-1">
-                    <h3 className="text-sm sm:text-base font-bold text-white font-display">Puducherry Office</h3>
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-brand-purple/10 text-brand-purple border border-brand-purple/20 font-semibold">Regional Hub</span>
+                    <h3 className="text-xs sm:text-base font-bold text-white font-display">Puducherry Office</h3>
+                    <span className="text-[9px] sm:text-[10px] font-mono px-1.5 py-0.5 rounded bg-brand-purple/10 text-brand-purple border border-brand-purple/20 font-semibold">Regional Hub</span>
                   </div>
                   <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">
                     eSales Technologies, 2, 1st and 2nd Floor, 19th Cross St, Avvai Nagar, Lawspet, Puducherry, 605008
@@ -85,7 +85,7 @@ const ContactPage: React.FC = () => {
                 </div>
               </div>
 
-              <div className="mt-6 rounded-2xl sm:rounded-[2rem] overflow-hidden glowing-border relative h-[220px] sm:h-[280px] w-full bg-brand-navy/30">
+              <div className="mt-4 rounded-xl sm:rounded-2xl overflow-hidden glowing-border relative h-[180px] sm:h-[260px] w-full bg-brand-navy/30">
                 <iframe 
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.9942478544453!2d78.4414603749354!3d17.436067783459954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb90c8853b0001%3A0x28975878b408c02c!2sImage%20Hospitals!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin" 
                   width="100%" 

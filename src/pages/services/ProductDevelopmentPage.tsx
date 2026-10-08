@@ -42,20 +42,20 @@ const ProductDevelopmentPage: React.FC = () => {
       </Helmet>
       <PageHero title="Product Development & Research" subtitle="Building the Future of Cybersecurity, Today." />
       
-      <div className="py-20 container mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
+      <div className="py-8 sm:py-16 md:py-20 container mx-auto px-3 sm:px-6">
+        <div className="grid md:grid-cols-2 gap-6 sm:gap-12 items-center mb-8 sm:mb-20">
             <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
-                <h2 className="text-3xl font-display font-bold text-white light:text-light-text mb-4">Innovation in Defense</h2>
-                <p className="text-gray-300 light:text-gray-600 mb-4 text-lg">
+                <h2 className="text-xl sm:text-3xl font-display font-bold text-white light:text-light-text mb-2 sm:mb-4">Innovation in Defense</h2>
+                <p className="text-gray-300 light:text-gray-600 mb-3 sm:mb-4 text-xs sm:text-base leading-relaxed">
                     At Roblocksec, we don't just use security tools—we build them. Our research and development arm is dedicated to creating the next generation of cybersecurity solutions. We turn groundbreaking ideas into practical, powerful tools that give our clients a decisive advantage over adversaries.
                 </p>
             </motion.div>
             <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
-                <img src="/rd-lab.jpg" alt="Roblocksec Research Lab" className="rounded-2xl shadow-2xl shadow-brand-purple/20 border border-white/10 object-cover w-full h-[380px]" />
+                <img src="/rd-lab.jpg" alt="Roblocksec Research Lab" className="rounded-xl sm:rounded-2xl shadow-xl shadow-brand-purple/20 border border-white/10 object-cover w-full h-[180px] sm:h-[300px] md:h-[380px]" />
             </motion.div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-4 sm:gap-8">
             {sections.map((section, index) => (
                 <motion.div
                     key={index}
@@ -63,18 +63,18 @@ const ProductDevelopmentPage: React.FC = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="card-bg p-8 rounded-lg glowing-border flex items-start gap-6"
+                    className="card-bg p-4 sm:p-6 md:p-8 rounded-xl glowing-border flex items-start gap-3.5 sm:gap-6"
                 >
-                    <section.icon className="w-12 h-12 text-brand-cyan light:text-brand-blue flex-shrink-0 mt-1" />
+                    <section.icon className="w-8 h-8 sm:w-12 sm:h-12 text-brand-cyan light:text-brand-blue flex-shrink-0 mt-1" />
                     <div>
-                        <h3 className="text-xl font-bold font-display text-white light:text-light-text mb-2">{section.title}</h3>
-                        <p className="text-gray-400 light:text-gray-600">{section.description}</p>
+                        <h3 className="text-base sm:text-xl font-bold font-display text-white light:text-light-text mb-1.5 sm:mb-2">{section.title}</h3>
+                        <p className="text-gray-400 light:text-gray-600 text-xs sm:text-sm leading-relaxed">{section.description}</p>
                     </div>
                 </motion.div>
             ))}
         </div>
-        <div className="text-center mt-16">
-            <Button href="/contact" variant="primary">Partner With Us for Research</Button>
+        <div className="text-center mt-8 sm:mt-16">
+            <Button href="/contact" variant="primary" className="text-xs sm:text-base py-2.5 sm:py-3.5 px-6 sm:px-8">Partner With Us for Research</Button>
         </div>
       </div>
       
